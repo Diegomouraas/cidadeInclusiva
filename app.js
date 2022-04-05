@@ -7,6 +7,9 @@ const mongoose = require('mongoose')
 
 
 // Configuração
+    // View engine
+        app.set('view engine', 'ejs')
+        app.set('views', 'pages')
     // middlewares
 
     // bodyParser
