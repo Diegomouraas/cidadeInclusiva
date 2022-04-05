@@ -9,3 +9,7 @@ const ## = mongoose.model('#') //////////////////   criar o modelo
         router.get('/', (req, res) => {
             res.send("pagina principal")
         })
+
+
+// Export
+    module.exports = router;

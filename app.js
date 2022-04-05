@@ -13,7 +13,7 @@ const mongoose = require('mongoose')
         app.use(bodyParser.urlencoded({extended: true}))
         app.use(bodyParser.json())
     // mongoose
-        mongoose.connect("mongodb://localhost/").then(() => {
+        mongoose.connect("mongodb://localhost/angraInclusiva").then(() => {
             console.log("Aplicação conectada ao servidor com sucesso!")
         }).catch((erro) => {
             console.log("Erro ao conectar no servidor: " + erro)
