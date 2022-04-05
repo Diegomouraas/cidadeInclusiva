@@ -21,7 +21,7 @@ const mongoose = require('mongoose')
     
 
 // Rotas
-    app.use('/rot', rotas)
+    app.use('/', rotas)
 
 // outros
     const port = 8080
