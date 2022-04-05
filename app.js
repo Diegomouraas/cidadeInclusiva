@@ -11,6 +11,7 @@ const mongoose = require('mongoose')
         app.set('view engine', 'ejs')
         app.set('views', 'pages')
     // middlewares
+        app.use(express.static("assets"))
 
     // bodyParser
         app.use(bodyParser.urlencoded({extended: true}))
