@@ -7,7 +7,7 @@ const ## = mongoose.model('#') //////////////////   criar o modelo
 // rotas
     // Index
         router.get('/', (req, res) => {
-            res.send("pagina principal")
+            res.render('index')
         })
 
 
