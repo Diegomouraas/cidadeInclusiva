@@ -9,9 +9,9 @@ const mongoose = require('mongoose')
 // Configuração
 // View engine
 app.set('view engine', 'ejs')
-app.set('views', 'pages')
+app.set('views', 'views')
     // middlewares
-app.use(express.static("assets"))
+app.use(express.static("public"))
 
 // bodyParser
 app.use(bodyParser.urlencoded({ extended: true }))
