@@ -9,6 +9,20 @@ const ## = mongoose.model('#') //////////////////   criar o modelo
         router.get('/', (req, res) => {
             res.render('index')
         })
+    
+    // Locais acessiveis
+        router.get('/locais', (req, res) => {
+            res.send("Pagina que mostra os locais acessiveis")
+        })
+    // Empresas acessiveis
+        router.get('/empresas', (req, res) => {
+            res.send("Pagina que mostra as empresas com selo")
+        })
+    // Servicos acessiveis
+        router.get('/servicos', (req, res) => {
+            res.send("Pagina que mostra os servicos com selo")
+        })
+        
 
 
 // Export
