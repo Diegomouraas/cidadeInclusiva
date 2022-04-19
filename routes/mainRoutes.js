@@ -12,15 +12,19 @@ const ## = mongoose.model('#') //////////////////   criar o modelo
     
     // Locais acessiveis
         router.get('/locais', (req, res) => {
-            res.send("Pagina que mostra os locais acessiveis")
+            res.render('locais')
         })
     // Empresas acessiveis
         router.get('/empresas', (req, res) => {
-            res.send("Pagina que mostra as empresas com selo")
+            res.render('empresas')
         })
     // Servicos acessiveis
         router.get('/servicos', (req, res) => {
-            res.send("Pagina que mostra os servicos com selo")
+            res.render('servicos')
+        })
+    // Legislações
+        router.get('/legislacoes', (req, res) => {
+            res.render('legislacoes')
         })
         
 
