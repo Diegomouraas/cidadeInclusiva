@@ -52,3 +52,13 @@
     height: 500px;
     width: 600px;
 }
+
+#block_container
+{
+  display: flex;
+  text-align:center;
+}
+#bloc1, #bloc2
+{
+    display:inline;
+}
