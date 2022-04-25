@@ -53,12 +53,19 @@
     width: 600px;
 }
 
-#block_container
-{
-  display: flex;
-  text-align:center;
+.bigbox{
+	width: 100%;
+	margin: auto;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-flow: wrap;	
 }
-#bloc1, #bloc2
-{
-    display:inline;
+
+.smallbox{
+	width: 500px;
+	height: 600px;
+	margin: 5px;
+	transition: 1s;
 }
