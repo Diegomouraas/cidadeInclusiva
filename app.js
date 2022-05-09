@@ -28,7 +28,7 @@ mongoose.connect("mongodb://localhost/angraInclusiva").then(() => {
 app.use('/', rotas)
 
 // outros
-const port = 8080
+const port = 8082
 app.listen(port, () => {
     console.log("Servidor aberto na porta: " + port)
 })
