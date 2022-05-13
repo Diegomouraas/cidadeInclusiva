@@ -15,75 +15,30 @@
     <section>
         <div>
             <%- include ('frags/header.ejs') %>
-            
             <br><br>
             <h1 class="h1text">Locais e Roteiros Acessiveis example</h1>
             <br><br>
-            
+            <hr style="border: 5px solid black">
+
             <div class="bigbox1">
-                <div class="card smallbox1 bg-info" style="width: 18rem;">
-                    <img src="/img/cadeirante.jpg" class="card-img-top" alt="imagem do Local">
-                    <div class="card-body">
-                    <h5 class="card-title">Local 1</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">ver local</a>
+                <% for(let i=0; i<20; i++) {%>
+                    <div class="card smallbox1 bg-white" style="width: 18rem;">
+                        <img src="/img/cadeirante.jpg" class="card-img-top" alt="imagem do Local">
+                        <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="card smallbox1 bg-info" style="width: 18rem;">
-                    <img src="/img/SeloPrata.png" class="card-img-top" alt="imagem do Local">
-                    <div class="card-body">
-                    <h5 class="card-title">Local 2</h5>
-                    <p class="card-text">texto teste exemplo</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card smallbox1 bg-info" style="width: 18rem;">
-                    <img src="/img/SeloOuro.png" class="card-img-top" alt="imagem do Local">
-                    <div class="card-body">
-                    <h5 class="card-title">Local 3</h5>
-                    <p class="card-text"> If a woodchuck could chuck wood? As much wood as a woodchuck could chuck,. If a woodchuck could chuck wood..</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card smallbox1 bg-info" style="width: 18rem;">
-                    <img src="/img/cadeirante.jpg" class="card-img-top" alt="imagem do Local">
-                    <div class="card-body">
-                    <h5 class="card-title">Local 4</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card smallbox1 bg-info" style="width: 18rem;">
-                    <img src="/img/SeloPrata.png" class="card-img-top" alt="imagem do Local">
-                    <div class="card-body">
-                    <h5 class="card-title">Local 5</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
-                <div class="card smallbox1 bg-info" style="width: 18rem;">
-                    <img src="/img/SeloOuro.png" class="card-img-top" alt="imagem do Local">
-                    <div class="card-body">
-                    <h5 class="card-title">Local 6</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-
+                <% } %>
             </div>
 
+            <hr style="border: 5px solid black">
             <br><br>
             <%- include ('frags/formLocal.ejs') %>
             <%- include ('frags/footer.ejs') %> 
-
         </div>
     </section>
-
     <script src="js/bootstrap.js"></script>
 </body>
 
