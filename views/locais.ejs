@@ -15,12 +15,30 @@
     <section>
         <div>
             <%- include ('frags/header.ejs') %>
+            <br><br>
+            <h1 class="h1text">Locais e Roteiros Acessiveis example</h1>
+            <br><br>
+            <hr style="border: 5px solid black">
+
+            <div class="bigbox1">
+                <% for(let i=0; i<20; i++) {%>
+                    <div class="card smallbox1 bg-white" style="width: 18rem;">
+                        <img src="/img/cadeirante.jpg" class="card-img-top" alt="imagem do Local">
+                        <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+
+            <hr style="border: 5px solid black">
+            <br><br>
             <%- include ('frags/formLocal.ejs') %>
             <%- include ('frags/footer.ejs') %> 
-
         </div>
     </section>
-
     <script src="js/bootstrap.js"></script>
 </body>
 
