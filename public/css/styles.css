@@ -1,54 +1,214 @@
-#figura {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+/* Estilizando do NavBar */
+
+.nav-toggler{
+    padding:0;
+    margin: 0%;
+    size: auto;
+    border: none;
+    color: #FF8700;
 }
 
-#selo {
-    margin-top: 10px;
-    margin-bottom: 10px;
+#menu-button{
+    border: none;
 }
 
-#texto {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+
+#navbar-links{
+    text-decoration: #fff;
 }
 
-#barraMenu {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+.row{
+    margin: 0;
 }
 
+.container{
+    padding: 10px;
+    align-items: center;
+}
+
+
+ header, .navbar {
+    background-color:#FF8700;
+}
+
+#footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#nav-container {
+    padding-top:0;
+    padding-bottom:0;
+    position: fixed;
+    padding: 14px,16px;
+    background-color: #FF8700;
+}
+
+.navbar-brand{
+padding: 0;
+color:#fff
+}
+
+.navbar-brand:hover{
+    color: #fff
+}
+
+.navbar-links a{
+    color: #fff;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 1rem .8rem;
+}
+
+#logo{
+    width: 120px;
+}
+
+/* Estilos do Main */
+.main{
+    padding:16px;
+    margin-top:40px;
+
+}
+
+/* Estilizando os selos */
+.spaceSelo{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+/* Estilizacao dos textos */
+
+#tituloCenter{
+    text-align: center;
+}
+
+#texto-informativo{
+    text-align: justify;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 5rem;
+    box-sizing: content-box;
+}
+
+/* estilizando o rodape  */
 #copyrightRodape {
     font-size: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    position: botton;
 }
 
 #rodape {
+    align-items: flex-end;
     position: bottom;
 }
 
+/* Dados do Google Maps */
 .mapouter {
     position: relative;
     text-align: right;
     height: 500px;
     width: 600px;
+}
+
+.main{
+    position: relative;
+    top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+
+/* Plano de fundo com elemnetos da LogoMarcar */
+body{
+    background-image: url(../img/cores.svg);
+    background-size: 100%;
+    background-position-x: right;
+    background-repeat: no-repeat;
+}
+
+/* Estilizando o Menu Hamburguer responsivo */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#checkbox-menu {
+    position: absolute;
+    opacity: 0;
+}
+
+label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 23px;
+    width: 30px;
+}
+
+label span {
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 30px;
+    background: #f16234;
+    transition: 0.25s ease-in-out;
+}
+
+label span:nth-child(1) {
+    top: 0;
+}
+
+label span:nth-child(2) {
+    top: 8px;
+}
+
+label span:nth-child(3) {
+    top: 16px;
+}
+
+
+#checkbox-menu:checked+label span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+#checkbox-menu:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+#checkbox-menu:checked+label span:nth-child(3) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+/* Teste com elemento do botao
+#checkbox-menu:checked+label ul:nth-of-type(1){
+display: flex;
+
+}
+*/
+
+/* Ocultando menu Mobile */
+
+button-menu{
+    -webkit-appearance: push-button;
+    -moz-appearance: button;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
 }
