@@ -116,6 +116,7 @@ color:#fff
     width: 600px;
 }
 
+<<<<<<< HEAD
 .main{
     position: relative;
     top: 100px;
@@ -211,4 +212,42 @@ button-menu{
     display: inline-block;
     cursor: pointer;
     padding: 5px;
+=======
+.bigbox{
+	width: 100%;
+	margin: auto;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-flow: wrap;	
+}
+
+.smallbox{
+	width: 500px;
+	height: 600px;
+	margin: 5px;
+	transition: 1s;
+}
+
+.bigbox1{
+	width: 90%;
+	margin: auto;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-flow: wrap;	
+}
+
+.smallbox1{
+	width: 500px;
+	height: 600px;
+	margin: 20px;
+	transition: 1s;
+}
+
+.h1text{
+    text-align: center;
+>>>>>>> f9a5ce24fdc04dd2cff840841f113fcca752d4fb
 }
