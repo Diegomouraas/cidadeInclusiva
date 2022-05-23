@@ -212,7 +212,10 @@ button-menu{
     padding: 5px;
 }
 
-.bigbox{
+
+/*conteiners do card de locais*/
+
+.containeBox{
 	width: 100%;
 	margin: auto;
 	height: auto;
@@ -222,24 +225,24 @@ button-menu{
 	flex-flow: wrap;	
 }
 
-.smallbox{
+.boxItens{
 	width: 500px;
 	height: 600px;
 	margin: 5px;
 	transition: 1s;
 }
 
-.bigbox1{
+.containeBox1{
 	width: 90%;
 	margin: auto;
 	height: auto;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-flow: wrap;	
 }
 
-.smallbox1{
+.boxItens1{
 	width: 500px;
 	height: 600px;
 	margin: 20px;
