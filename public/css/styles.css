@@ -198,7 +198,6 @@ label span:nth-child(3) {
 /* Teste com elemento do botao
 #checkbox-menu:checked+label ul:nth-of-type(1){
 display: flex;
-
 }
 */
 
@@ -251,4 +250,8 @@ button-menu{
 
 .h1text{
     text-align: center;
+}
+
+#cardLocais{
+    width: 18rem;
 }
