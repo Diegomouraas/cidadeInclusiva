@@ -23,17 +23,16 @@
             <br><br>
             <hr style="border: 5px solid black">
 
-            <div class="containeBox1">
-                <% for(let i=0; i<20; i++) {%>
-                    <div class="card boxItens1 bg-white fluid-body" id="cardLocais">
-                        <img src="/img/cadeirante.jpg" class="card-img-top" alt="imagem do Local">
-                        <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="container-fluid">
+                <div class="row">
+                    <% for(let i=0; i<20; i++) {%>
+                        <div class="col-lg-2" id="cardLocais">
+                            <h5 class="card-title">Texto exemplo</h5>
+                            <p class="card-text">texto de exemplo texto de exemplo texto de exemplo texto de exemplo texto de exemplo. tetiajobdowbdabowjdbaowdb obdowbdabowjdbaowdb obdowbdabowjdbaowdb</p>
+                            <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">sobre</a>
                         </div>
-                    </div>
-                <% } %>
+                    <% } %>
+                </div>
             </div>
 
             <hr style="border: 5px solid black">
