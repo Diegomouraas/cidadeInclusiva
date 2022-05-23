@@ -115,8 +115,6 @@ color:#fff
     height: 500px;
     width: 600px;
 }
-
-<<<<<<< HEAD
 .main{
     position: relative;
     top: 100px;
@@ -212,7 +210,8 @@ button-menu{
     display: inline-block;
     cursor: pointer;
     padding: 5px;
-=======
+}
+
 .bigbox{
 	width: 100%;
 	margin: auto;
@@ -249,5 +248,4 @@ button-menu{
 
 .h1text{
     text-align: center;
->>>>>>> f9a5ce24fdc04dd2cff840841f113fcca752d4fb
 }
