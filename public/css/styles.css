@@ -31,10 +31,10 @@
     background-color:#FF8700;
 }
 
-#footer{
+#footerPosition{
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 #nav-container {
@@ -54,16 +54,12 @@ color:#fff
     color: #fff
 }
 
-.navbar-links a{
-    color: #fff;
-}
-
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
 }
 
 #logo{
-    width: 120px;
+    width: 180px;
 }
 
 /* Estilos do Main */
@@ -116,7 +112,6 @@ color:#fff
     width: 600px;
 }
 
-<<<<<<< HEAD
 .main{
     position: relative;
     top: 100px;
@@ -212,16 +207,16 @@ button-menu{
     display: inline-block;
     cursor: pointer;
     padding: 5px;
-=======
-.bigbox{
-	width: 100%;
-	margin: auto;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-flow: wrap;	
 }
+    .bigbox{
+        width: 100%;
+        margin: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-flow: wrap;	
+    }
 
 .smallbox{
 	width: 500px;
@@ -249,5 +244,4 @@ button-menu{
 
 .h1text{
     text-align: center;
->>>>>>> f9a5ce24fdc04dd2cff840841f113fcca752d4fb
 }
