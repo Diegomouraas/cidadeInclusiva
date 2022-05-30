@@ -23,7 +23,7 @@ const Registro = new Schema({
     },
 
     descricao: {
-        type: Text,
+        type: String,
         required: true
     },
 
