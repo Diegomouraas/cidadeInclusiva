@@ -39,7 +39,7 @@ ul{
 .logo{
     display: inline-block;
     margin-left: 5%;
-    margin-top: 20px;
+    margin-top: 23px;
 }
 
 /* Nav menu */
@@ -49,12 +49,12 @@ ul{
     position: fixed;
     background-color: var(--black);
     overflow: hidden;
-    
 }
 
 .menu a{
     display: block;
-    padding: 30px;
+    padding-top: 35px;
+    padding-right: 25px;
     color: var(--white);
 }
 
@@ -71,9 +71,8 @@ ul{
 
 .hamb{
     cursor: pointer;
-    float: right;
-    margin-right: 5%;
-    padding: 40px 20px;
+    float: right; 
+    padding: 45px 60px;
 }
 
 
@@ -113,7 +112,7 @@ ul{
 /* Toggle menu icon */
 
 .side-menu:checked ~ nav{
-    max-height: 70%;
+    max-height: 50%;
 }
 
 .side-menu:checked ~ .hamb .hamb-line {
