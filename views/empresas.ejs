@@ -13,13 +13,32 @@
 
 <body>
     <section>
+        
             <%- include ('frags/header.ejs') %>
-            <div class="main"> 
-                <%- include ('frags/formEmpresa.ejs') %>
-                <%- include ('frags/footer.ejs') %> 
-             </div>
-    </section>
 
+            <div class="main">
+
+            <br><br>
+            <h2 class="h1text">Empresas Acessiveis</h1>
+            <br><br>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <% for(let i=0; i<20; i++) {%>
+                        <div class="col-lg-2" id="cardLocais">
+                            <h5 class="card-title">Texto exemplo</h5>
+                            <p class="card-text">texto de exemplo texto de exemplo texto de exemplo texto de exemplo texto de exemplo. tetiajobdowbdabowjdbaowdb obdowbdabowjdbaowdb obdowbdabowjdbaowdb</p>
+                            <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">sobre</a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+
+            <br><br>
+        
+            <%- include ('frags/footer.ejs') %> 
+        </div>
+    </section>
     <script src="js/bootstrap.js"></script>
 </body>
 
