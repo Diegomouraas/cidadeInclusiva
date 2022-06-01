@@ -45,7 +45,10 @@ const Registro = mongoose.model('registro')
             res.render('legislacoes')
         })
         
-
+    // Admin
+        router.get('/admaciadm', (req, res) => {
+            res.render('admin')
+        })
 
 // Export
     module.exports = router;
