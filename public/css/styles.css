@@ -1,0 +1,421 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* navbar e hamburger menu */
+
+
+/* Theming */
+:root{
+    --white: #f9f9f9;
+    --black: #FFBA00;
+    --grey: #85888C;
+}
+
+.headerTexts{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul{
+    list-style: none;
+}
+
+/* Header */
+.header{
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--grey);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+}
+
+
+/* Logo */
+.logo{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 23px;
+}
+
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+.menu a{
+    display: block;
+    padding-top: 35px;
+    padding-right: 40px;
+    color: var(--white);
+}
+
+.menu a:hover{
+    background-color: var(--grey);
+}
+
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+/* Menu Icon */
+
+.hamb{
+    cursor: pointer;
+    float: right; 
+    padding: 45px 60px;
+}
+
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    z-index: 2;
+}
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before{
+    top: 5px;
+}
+
+.hamb-line::after{
+    top: -5px;
+}
+
+
+.side-menu {
+    display: none;
+}
+
+/* Toggle menu icon */
+
+.side-menu:checked ~ nav{
+    max-height: 50%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+
+/* Responsiveness */
+
+@media (min-width: 910px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+
+    }
+
+    .menu li{
+        float: left;
+    }
+
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--grey);
+        
+    }
+    
+    .hamb{
+        display: none;
+    }
+
+}
+
+
+/* Estilizando do NavBar */
+
+.row{
+    margin: 0;
+}
+
+.container{
+    padding: 10px;
+    align-items: center;
+}
+
+#footer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#nav-container {
+    padding-top:0;
+    padding-bottom:0;
+    position: fixed;
+    padding: 14px,16px;
+    background-color: #FF8700;
+}
+
+.navbar-brand{
+padding: 0;
+color:#fff
+}
+
+.navbar-brand:hover{
+    color: #fff
+}
+
+.navbar-links a{
+    color: #fff;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 1rem .8rem;
+}
+
+#logo{
+    width: 120px;
+}
+
+/* Estilos do Main */
+.main{
+    padding:16px;
+    margin-top:40px;
+
+}
+
+/* Estilizando os selos */
+.spaceSelo{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+/* Estilizacao dos textos */
+
+#tituloCenter{
+    text-align: center;
+}
+
+#texto-informativo{
+    background: rgba(255, 255, 255, 0.449);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(36, 86, 203, 0.3);
+    text-align: justify;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-indent: 5rem;
+    box-sizing: content-box;
+}
+
+/* estilizando o rodape  */
+#copyrightRodape {
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: botton;
+}
+
+#rodape {
+    align-items: flex-end;
+    position: bottom;
+}
+
+/* Dados do Google Maps */
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 600px;
+}
+.main{
+    position: relative;
+    top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+
+/* Plano de fundo com elemnetos da LogoMarcar */
+body{
+    background-image: url(../img/cores.svg);
+    background-size: 100%;
+    background-position-x: right;
+    background-repeat: no-repeat;
+}
+
+/* Estilizando o Menu Hamburguer responsivo */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#checkbox-menu {
+    position: absolute;
+    opacity: 0;
+}
+
+label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 23px;
+    width: 30px;
+}
+
+label span {
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 100%;
+    border-radius: 30px;
+    background: #f16234;
+    transition: 0.25s ease-in-out;
+}
+
+label span:nth-child(1) {
+    top: 0;
+}
+
+label span:nth-child(2) {
+    top: 8px;
+}
+
+label span:nth-child(3) {
+    top: 16px;
+}
+
+
+#checkbox-menu:checked+label span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+#checkbox-menu:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+#checkbox-menu:checked+label span:nth-child(3) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+/* Teste com elemento do botao
+#checkbox-menu:checked+label ul:nth-of-type(1){
+display: flex;
+}
+*/
+
+/* Ocultando menu Mobile */
+
+button-menu{
+    -webkit-appearance: push-button;
+    -moz-appearance: button;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/*configurações dos card de locais*/
+
+.containeBox{
+	width: 100%;
+	margin: auto;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-flow: wrap;	
+}
+
+.boxItens{
+	width: 500px;
+	height: 600px;
+	margin: 5px;
+	transition: 1s;
+}
+
+.containeBox1{
+	width: 90%;
+	margin: auto;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-flow: wrap;	
+}
+
+.boxItens1{
+	width: 500px;
+	height: 600px;
+	margin: 20px;
+	transition: 1s;
+}
+
+.h1text{
+    text-align: center;
+}
+
+#cardLocais{
+    border-radius: 50px;
+    background: rgba(42, 141, 152, 0.56);
+    margin: 10px auto;
+    padding-top: 40px;
+    min-width: 18rem;
+    min-height: 18rem;
+    max-width:18rem;
+    max-height:18rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(36, 86, 203, 0.3);
+}
+
+#btnCards{
+    margin: 0px 30px;
+    background: rgba(42, 141, 152, 0.449);
+}
+
+
+
+
