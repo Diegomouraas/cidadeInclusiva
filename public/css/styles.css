@@ -394,6 +394,7 @@ button-menu{
 }
 
 .h1text{
+    color: #FF8700;
     text-align: center;
 }
 
@@ -416,6 +417,54 @@ button-menu{
     background: rgba(42, 141, 152, 0.449);
 }
 
+/*estilisação do formulario de cadastro*/
+.flexForm{
+    display: flex;
+    color: #444;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(120, 130, 195, 0.3);
+}
 
+.flexForm > div{
+    margin: auto;
+}
 
-
+#cnpj{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#nomeEmpresa{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#sobreEmpresa{
+    width: 90%;
+    height: 140px;
+    margin: 5px;
+}
+#endereco{
+    width: 60%;
+    height: 60px;
+    margin: 5px;
+}
+#cep{
+    width: 20%;
+    height: 60px;
+    margin: 5px;
+}
+#bairro{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#telefone{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#btnForm{
+    margin-top: 20px;
+}
