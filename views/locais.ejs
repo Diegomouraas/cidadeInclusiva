@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <title>Angra Cidade Inclusiva</title>
-        <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon"/>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <title>Angra Cidade Inclusiva</title>
+    <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon" />
+</head>
 
 <body>
     <section>
-        
-            <%- include ('frags/header.ejs') %>
+
+        <%- include ('frags/header.ejs') %>
 
             <div class="main">
 
-            <br><br>
-            <h1 class="h1text">Locais e Roteiros Acessiveis example</h1>
-            <br><br>
-            <hr style="border: 5px solid black">
+                <br><br>
+                <h3 class="h1text">Locais Acessiveis</h3>
+                <br><br>
 
-            <div class="bigbox1">
-                <% for(let i=0; i<20; i++) {%>
-                    <div class="card smallbox1 bg-white" style="width: 18rem;">
-                        <img src="/img/cadeirante.jpg" class="card-img-top" alt="imagem do Local">
-                        <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <% for(let i=0; i<20; i++) {%>
+                            <div class="col-lg-2" id="cardLocais">
+                                <h5 class="card-title">Texto exemplo</h5>
+                                <p class="card-text">texto de exemplo texto de exemplo texto de exemplo texto de exemplo texto de exemplo. tetiajobdowbdabowjdbaowdb obdowbdabowjdbaowdb obdowbdabowjdbaowdb</p>
+                                <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">sobre</a>
+                            </div>
+                            <% } %>
                     </div>
-                <% } %>
+                </div>
+
+                <br><br>
+                <%- include ('frags/footer.ejs') %>
             </div>
-
-            <hr style="border: 5px solid black">
-            <br><br>
-
-            <%- include ('frags/formLocal.ejs') %>
-            <%- include ('frags/footer.ejs') %> 
-        </div>
     </section>
     <script src="js/bootstrap.js"></script>
 </body>
 
 </html>
-

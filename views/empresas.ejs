@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <title>Angra Cidade Inclusiva</title>
-        <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon"/>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <title>Angra Cidade Inclusiva</title>
+    <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon" />
+</head>
 
 <body>
     <section>
-            <%- include ('frags/header.ejs') %>
-<<<<<<< HEAD
-            <div class="main"> 
-=======
-            <br><br>
->>>>>>> f9a5ce24fdc04dd2cff840841f113fcca752d4fb
-                <%- include ('frags/formEmpresa.ejs') %>
-                <%- include ('frags/footer.ejs') %> 
-             </div>
-    </section>
 
+        <%- include ('frags/header.ejs') %>
+
+            <div class="main">
+
+                <br><br>
+                <h3>Empresas Acessiveis</h3>
+                <br><br>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <% for(let i=0; i<20; i++) {%>
+                            <div class="col-lg-2" id="cardLocais">
+                                <h5 class="card-title">Texto exemplo</h5>
+                                <p class="card-text">texto de exemplo texto de exemplo texto de exemplo texto de exemplo texto de exemplo. tetiajobdowbdabowjdbaowdb obdowbdabowjdbaowdb obdowbdabowjdbaowdb</p>
+                                <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">sobre</a>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <%- include ('frags/footer.ejs') %>
+            </div>
+    </section>
     <script src="js/bootstrap.js"></script>
 </body>
 
 </html>
-
