@@ -1,58 +1,25 @@
-<header>    
-    <div class="container-fluid sticky-top justify-content-end fixed-top" id="nav-container">
-      <nav class="navbar navbar-expand-lg navbar-light ">
-        
-    <div class="container">
-        
-        <a class="navbar-brand">
-          <img id="logo" src="/img/Angra Cidade Inclusiva - logotipo 4.png" alt="Logo - Angra dos Reis - Cidade Inclusiva">
+<!-- Navigation bar -->
+<header class="header">
+    <div>
+        <!-- Logo -->
+        <a class="navbar-brand logo" href="/">
+            <img title="pagina principal" id="logo" src="/img/Angra Cidade Inclusiva - logotipo 4.png" alt="Logo - Angra dos Reis - Cidade Inclusiva">
         </a>
 
-         <!-- Criando o Menu Hamburguer-->
-         <div class="navbar-toggler" id="menu-button">
-          <input type="checkbox" id="checkbox-menu" class="navbar-toggler" data-toggle="collapse" data-target="#linksExpand" aria-controls="nav" aria-expanded="false" aria-label="Toggle-navigation">
-          <label for="checkbox-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-        <!-- Criando o Menu Hamburguer-->
+        <!-- Hamburger icon -->
+        <input class="side-menu" type="checkbox" id="side-menu" />
+        <label title="mostrar menu" class="hamb" for="side-menu"><span class="hamb-line"></span></label>
 
-    
-          <div class="container collapse navbar-collapse" id="linksExpand">
-              <ul class="nav navbar-collapse justify-content-end nav-fill nav-pills" for="navlinks">
-                  <div class="navbar-nav">
-
-                    <li class="nav-item bg-color">
-                        <a class="nav-link text-light" href="/" id="Sobre">Sobre</a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a class="nav-link text-light" href="locais" id="Locais">Locais e Roteiros Acessiveis</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                      <a class="nav-link text-light" href="servicos" id="Servicos">Serviços Cadastrados</a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a class="nav-link text-light" href="empresas" id="Empresas">Empresas Cadastradas</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                      <a class="nav-link text-light" href="legislacoes" id="Legislacoes">Legislações</a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a class="nav-link text-light" href="footer" id="Contatos">Contatos</a>
-                    </li>
-                </div>
-              </ul>  
-          </div>
-        </div>
-      </nav>                 
+        <!-- Menu -->
+        <nav class="nav">
+            <ul class="menu">
+                <li><a title="pagina principal" class="headerTexts" href="/" id="sobre">Sobre</a> </li>
+                <li><a title="Locais e Roteiros Acessiveis" class="headerTexts" href="locais" id="Locais">Locais</a> </li>
+                <li><a title="Serviços Cadastrados" class="headerTexts" href="servicos" id="Servicos">Roteiros</a></li>
+                <li><a title="Empresas Cadastradas" class="headerTexts" href="empresas" id="Empresas">Empresas</a></li>
+                <li><a title="Cadastre sua empresa/local/serviço" class="headerTexts" href="legislacoes" id="Legislacoes">Legislações</a></li>
+                <li><a title="Cadastre sua empresa/local/serviço" class="headerTexts" href="legislacoes" id="Legislacoes">Cadastrar</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
-
-
+</header>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <title>Angra Cidade Inclusiva</title>
-        <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon"/>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <title>Angra Cidade Inclusiva</title>
+    <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon" />
+</head>
 
 <body>
     <section>
+<<<<<<< HEAD
         
             <%- include ('frags/header.ejs') %>
             <div class="container-fluid main">
@@ -74,10 +75,33 @@
                     <h5 class="card-title">Local 6</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, ipsa ea autem molestiae ut nobis suscipit modi hic earum, beatae illum odit maxime. Non explicabo, dolore exercitationem enim est ea.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
+=======
+
+        <%- include ('frags/header.ejs') %>
+
+            <div class="main">
+
+                <br><br>
+                <h3 class="h1text">Locais Acessiveis</h3>
+                <br><br>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <% for(let i=0; i<20; i++) {%>
+                            <div class="col-lg-2" id="cardLocais">
+                                <h5 class="card-title">Texto exemplo</h5>
+                                <p class="card-text">texto de exemplo texto de exemplo texto de exemplo texto de exemplo texto de exemplo. tetiajobdowbdabowjdbaowdb obdowbdabowjdbaowdb obdowbdabowjdbaowdb</p>
+                                <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">sobre</a>
+                            </div>
+                            <% } %>
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
                     </div>
                 </div>
 
+                <br><br>
+                <%- include ('frags/footer.ejs') %>
             </div>
+<<<<<<< HEAD
 
             </div>
 
@@ -86,10 +110,10 @@
             <%- include ('frags/footer.ejs') %> 
 
         </div>
+=======
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
     </section>
-
     <script src="js/bootstrap.js"></script>
 </body>
 
 </html>
-

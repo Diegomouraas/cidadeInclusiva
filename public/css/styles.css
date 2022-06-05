@@ -1,97 +1,284 @@
-/* Estilizando do NavBar */
+/* Reset */
 
-.nav-toggler{
-    padding:0;
-    margin: 0%;
-    size: auto;
-    border: none;
-    color: #FF8700;
-}
-
-#menu-button{
-    border: none;
-}
-
-
-#navbar-links{
-    text-decoration: #fff;
-}
-
-.row{
+* {
     margin: 0;
-}
-
-.container{
-    padding: 10px;
-    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
- header, .navbar {
-    background-color:#FF8700;
+/* navbar e hamburger menu */
+
+
+/* Theming */
+
+:root {
+    --white: #f9f9f9;
+    --orange: #FFBA00;
+    --orangedark: #FF8700;
+    --bluelight: #00FFFF;
+    --bluedark: #00BAFF;
+    --greelight: #94FF00;
+    --greendark: #59FF00;
+    --bluevdark: #0019FF;
+    --grey: #85888C;
 }
 
+.headerTexts {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Header */
+
+.header {
+    background-color: var(--orange);
+    box-shadow: 1px 1px 5px 0px var(--grey);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+}
+
+
+/* Logo */
+
+.logo {
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 23px;
+}
+
+
+/* Nav menu */
+
+.nav {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--orange);
+    overflow: hidden;
+}
+
+<<<<<<< HEAD
 #footerPosition{
   display: flex;
   justify-content: center;
   align-items: flex-end;
+=======
+.menu a {
+    display: block;
+    padding-top: 35px;
+    padding-right: 40px;
+    color: var(--white);
+}
+
+.menu a:hover {
+    background-color: var(--grey);
+}
+
+.nav {
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+
+/* Menu Icon */
+
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 45px 60px;
+}
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    z-index: 2;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+
+/* Toggle menu icon */
+
+.side-menu:checked~nav {
+    max-height: 50%;
+}
+
+.side-menu:checked~.hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked~.hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked~.hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+/* Responsiveness */
+
+@media (min-width: 910px) {
+    .nav {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li {
+        float: left;
+    }
+    .menu a:hover {
+        background-color: transparent;
+        color: var(--grey);
+    }
+    .hamb {
+        display: none;
+    }
+}
+
+
+/* Estilizando do NavBar */
+
+.row {
+    margin: 0;
+}
+
+.container {
+    padding: 10px;
+    align-items: center;
+}
+
+#footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: baseline;
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
 }
 
 #nav-container {
-    padding-top:0;
-    padding-bottom:0;
+    padding-top: 0;
+    padding-bottom: 0;
     position: fixed;
-    padding: 14px,16px;
+    padding: 14px, 16px;
     background-color: #FF8700;
 }
 
-.navbar-brand{
-padding: 0;
-color:#fff
-}
-
-.navbar-brand:hover{
+.navbar-brand {
+    padding: 0;
     color: #fff
 }
 
+.navbar-brand:hover {
+    color: #fff
+}
+
+<<<<<<< HEAD
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
 }
 
 #logo{
     width: 180px;
+=======
+.navbar-links a {
+    color: #fff;
 }
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem .8rem;
+}
+
+#logo {
+    width: 120px;
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
+}
+
 
 /* Estilos do Main */
-.main{
-    padding:16px;
-    margin-top:40px;
 
+.main {
+    padding: 16px;
+    margin-top: 40px;
 }
+
 
 /* Estilizando os selos */
-.spaceSelo{
+
+.spaceSelo {
     margin-top: 5px;
     margin-bottom: 5px;
-
 }
+
 
 /* Estilizacao dos textos */
 
-#tituloCenter{
+#tituloCenter {
     text-align: center;
 }
 
-#texto-informativo{
+#texto-informativo {
+    background: rgba(255, 255, 255, 0.449);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(36, 86, 203, 0.3);
     text-align: justify;
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
     text-indent: 5rem;
     box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
+#figura {
+    border-radius: 5px;
+}
+
+
 /* estilizando o rodape  */
+
 #copyrightRodape {
     font-size: 10px;
     padding-top: 10px;
@@ -104,7 +291,9 @@ color:#fff
     position: bottom;
 }
 
+
 /* Dados do Google Maps */
+
 .mapouter {
     position: relative;
     text-align: right;
@@ -112,7 +301,11 @@ color:#fff
     width: 600px;
 }
 
+<<<<<<< HEAD
 .main{
+=======
+.main {
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
     position: relative;
     top: 100px;
     margin-left: auto;
@@ -122,12 +315,14 @@ color:#fff
 
 
 /* Plano de fundo com elemnetos da LogoMarcar */
-body{
+
+body {
     background-image: url(../img/cores.svg);
     background-size: 100%;
     background-position-x: right;
     background-repeat: no-repeat;
 }
+
 
 /* Estilizando o Menu Hamburguer responsivo */
 
@@ -177,7 +372,6 @@ label span:nth-child(3) {
     top: 16px;
 }
 
-
 #checkbox-menu:checked+label span:nth-child(1) {
     transform: rotate(-45deg);
     top: 8px;
@@ -192,22 +386,24 @@ label span:nth-child(3) {
     top: 8px;
 }
 
+
 /* Teste com elemento do botao
 #checkbox-menu:checked+label ul:nth-of-type(1){
 display: flex;
-
 }
 */
 
+
 /* Ocultando menu Mobile */
 
-button-menu{
+button-menu {
     -webkit-appearance: push-button;
     -moz-appearance: button;
     display: inline-block;
     cursor: pointer;
     padding: 5px;
 }
+<<<<<<< HEAD
     .bigbox{
         width: 100%;
         margin: auto;
@@ -244,4 +440,93 @@ button-menu{
 
 .h1text{
     text-align: center;
+=======
+
+
+/*configurações dos card de locais*/
+
+.containeBox {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+.boxItens {
+    width: 500px;
+    height: 600px;
+    margin: 5px;
+    transition: 1s;
+}
+
+.containeBox1 {
+    width: 90%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.boxItens1 {
+    width: 500px;
+    height: 600px;
+    margin: 20px;
+    transition: 1s;
+}
+
+#cardLocais {
+    border-radius: 5px;
+    background: rgba(42, 141, 152, 0.56);
+    margin: 10px auto;
+    padding-top: 40px;
+    min-width: 18rem;
+    min-height: 18rem;
+    max-width: 18rem;
+    max-height: 18rem;
+    margin: 5px, 5px, 5px, 5px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(36, 86, 203, 0.3);
+}
+
+#btnCards {
+    margin: 0px 30px;
+    background: rgba(42, 141, 152, 0.449);
+}
+
+
+/* Estilização tela de Login */
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 300px;
+    color: #FF8700;
+    border-radius: 5px;
+    position: static;
+}
+
+#login {
+    justify-content: center;
+}
+
+
+/* Estilização Títulos de Tela */
+
+h1,
+h3,
+h4,
+.h1text {
+    align-items: center;
+    text-align: center;
+    color: #FF8700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
 }
