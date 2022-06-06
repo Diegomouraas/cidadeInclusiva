@@ -22,9 +22,9 @@ const ## = mongoose.model('#') //////////////////   criar o modelo
         router.get('/servicos', (req, res) => {
             res.render('servicos')
         })
-    // Legislações
-        router.get('/legislacoes', (req, res) => {
-            res.render('legislacoes')
+    // cadastro
+        router.get('/cadastro', (req, res) => {
+            res.render('cadastro')
         })
         
 

@@ -1,0 +1,38 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Requerente</th>
+        <th scope="col">Cnpj</th>
+        <th scope="col">Tele</th>
+        <th scope="col">Local</th>
+        <th scope="col">data/aquisicao</th>
+        <th scope="col">selo</th>
+        <th scope="col">AN</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(let i=0; i<pendentes.length; i++) {%>
+            <tr>
+                <th scope="row"><%=i+1%></th>
+                <td><%= pendentes[i].nome %></td>
+                <td><%= pendentes[i].cnpj %></td>
+                <td><%= pendentes[i].telefone %></td>
+                <td><%= pendentes[i].local %></td>
+                <td><%= pendentes[i].data %></td>
+                <td>
+                    <select class="form-control" name="seloSelect">
+                        <option value="naoEscolheu">Escolha Celo</option>
+                        <option value="ouro">ouro</option>
+                        <option value="prata">prata</option>
+                        <option value="bronze">bronze</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-primary col-sm-4" id="btnForm">Aceitar</button>
+                    <button type="submit" class="btn btn-primary col-sm-4" id="btnForm">Negar</button>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+  </table>
