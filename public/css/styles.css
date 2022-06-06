@@ -172,10 +172,17 @@ ul{
     align-items: center;
 }
 
-#footer{
+
+
+ header, .navbar {
+    background-color:#FF8700;
+}
+
+#footerPosition{
+
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 #nav-container {
@@ -195,16 +202,12 @@ color:#fff
     color: #fff
 }
 
-.navbar-links a{
-    color: #fff;
-}
-
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
 }
 
 #logo{
-    width: 120px;
+    width: 180px;
 }
 
 /* Estilos do Main */
@@ -260,6 +263,7 @@ color:#fff
     height: 500px;
     width: 600px;
 }
+
 .main{
     position: relative;
     top: 100px;
@@ -354,6 +358,7 @@ button-menu{
     display: inline-block;
     cursor: pointer;
     padding: 5px;
+
 }
 
 
@@ -367,7 +372,17 @@ button-menu{
 	flex-direction: row;
 	justify-content: space-between;
 	flex-flow: wrap;	
+
 }
+    .bigbox{
+        width: 100%;
+        margin: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-flow: wrap;	
+    }
 
 .boxItens{
 	width: 500px;
@@ -396,6 +411,7 @@ button-menu{
 .h1text{
     color: #FF8700;
     text-align: center;
+
 }
 
 #cardLocais{
@@ -468,4 +484,5 @@ button-menu{
 }
 #btnForm{
     margin-top: 20px;
+
 }
