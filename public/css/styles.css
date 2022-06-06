@@ -414,8 +414,16 @@ button-menu{
 
 }
 
-#cardLocais{
-    border-radius: 50px;
+
+/*textImageMenu estilisa o texto e imagen no menu */
+
+.textImageMenu {
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+#cardLocais {
+    border-radius: 5px;
     background: rgba(42, 141, 152, 0.56);
     margin: 10px auto;
     padding-top: 40px;
@@ -436,11 +444,15 @@ button-menu{
 /*estilisação do formulario de cadastro*/
 .flexForm{
     display: flex;
-    color: #444;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(120, 130, 195, 0.3);
-    padding-bottom: 20px;
+
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 300px;
+    color: #FF8700;
+    border-radius: 5px;
+    position: static;
+    margin-top: -150px;
 }
 
 .flexForm > div{
