@@ -421,6 +421,14 @@ button-menu {
     transition: 1s;
 }
 
+
+/*textImageMenu estilisa o texto e imagen no menu */
+
+.textImageMenu {
+    width: 400px;
+    margin-bottom: 50px;
+}
+
 #cardLocais {
     border-radius: 5px;
     background: rgba(42, 141, 152, 0.56);
@@ -453,6 +461,7 @@ button-menu {
     color: #FF8700;
     border-radius: 5px;
     position: static;
+    margin-top: -150px;
 }
 
 #login {
