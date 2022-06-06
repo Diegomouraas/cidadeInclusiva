@@ -51,4 +51,4 @@ const Registro = mongoose.model('registro')
         })
 
 // Export
-    module.exports = router;
+module.exports = router;
