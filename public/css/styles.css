@@ -66,6 +66,12 @@ ul {
     overflow: hidden;
 }
 
+<<<<<<< HEAD
+#footerPosition{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+=======
 .menu a {
     display: block;
     padding-top: 35px;
@@ -185,6 +191,7 @@ ul {
     justify-content: flex-end;
     align-items: center;
     position: baseline;
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
 }
 
 #nav-container {
@@ -204,6 +211,14 @@ ul {
     color: #fff
 }
 
+<<<<<<< HEAD
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 1rem .8rem;
+}
+
+#logo{
+    width: 180px;
+=======
 .navbar-links a {
     color: #fff;
 }
@@ -214,6 +229,7 @@ ul {
 
 #logo {
     width: 120px;
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
 }
 
 
@@ -285,7 +301,11 @@ ul {
     width: 600px;
 }
 
+<<<<<<< HEAD
+.main{
+=======
 .main {
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
     position: relative;
     top: 100px;
     margin-left: auto;
@@ -383,6 +403,44 @@ button-menu {
     cursor: pointer;
     padding: 5px;
 }
+<<<<<<< HEAD
+    .bigbox{
+        width: 100%;
+        margin: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-flow: wrap;	
+    }
+
+.smallbox{
+	width: 500px;
+	height: 600px;
+	margin: 5px;
+	transition: 1s;
+}
+
+.bigbox1{
+	width: 90%;
+	margin: auto;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-flow: wrap;	
+}
+
+.smallbox1{
+	width: 500px;
+	height: 600px;
+	margin: 20px;
+	transition: 1s;
+}
+
+.h1text{
+    text-align: center;
+=======
 
 
 /*configurações dos card de locais*/
@@ -479,4 +537,5 @@ h4,
     text-align: center;
     color: #FF8700;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+>>>>>>> e2a63e4d6a7ad41d51b8bacaaffb7fdc79fed828
 }
