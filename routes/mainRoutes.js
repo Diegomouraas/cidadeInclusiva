@@ -47,7 +47,7 @@ const Registro = mongoose.model('registro')
         
     // Admin
         router.get('/admaciadm', (req, res) => {
-            res.render('admin')
+            res.render('login')
         })
 
 // Export
