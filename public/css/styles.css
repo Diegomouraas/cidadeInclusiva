@@ -411,7 +411,6 @@ button-menu{
 .h1text{
     color: #FF8700;
     text-align: center;
-
 }
 
 
@@ -444,15 +443,12 @@ button-menu{
 /*estilisação do formulario de cadastro*/
 .flexForm{
     display: flex;
-
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 300px;
-    color: #FF8700;
-    border-radius: 5px;
-    position: static;
-    margin-top: -150px;
+    color: #444;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(120, 130, 195, 0.3);
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .flexForm > div{
@@ -496,5 +492,4 @@ button-menu{
 }
 #btnForm{
     margin-top: 20px;
-
 }
