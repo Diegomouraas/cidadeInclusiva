@@ -172,10 +172,17 @@ ul{
     align-items: center;
 }
 
-#footer{
+
+
+ header, .navbar {
+    background-color:#FF8700;
+}
+
+#footerPosition{
+
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 #nav-container {
@@ -195,16 +202,12 @@ color:#fff
     color: #fff
 }
 
-.navbar-links a{
-    color: #fff;
-}
-
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
 }
 
 #logo{
-    width: 120px;
+    width: 180px;
 }
 
 /* Estilos do Main */
@@ -260,6 +263,7 @@ color:#fff
     height: 500px;
     width: 600px;
 }
+
 .main{
     position: relative;
     top: 100px;
@@ -354,6 +358,7 @@ button-menu{
     display: inline-block;
     cursor: pointer;
     padding: 5px;
+
 }
 
 
@@ -367,7 +372,17 @@ button-menu{
 	flex-direction: row;
 	justify-content: space-between;
 	flex-flow: wrap;	
+
 }
+    .bigbox{
+        width: 100%;
+        margin: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-flow: wrap;	
+    }
 
 .boxItens{
 	width: 500px;
@@ -394,11 +409,20 @@ button-menu{
 }
 
 .h1text{
+    color: #FF8700;
     text-align: center;
 }
 
-#cardLocais{
-    border-radius: 50px;
+
+/*textImageMenu estilisa o texto e imagen no menu */
+
+.textImageMenu {
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+#cardLocais {
+    border-radius: 5px;
     background: rgba(42, 141, 152, 0.56);
     margin: 10px auto;
     padding-top: 40px;
@@ -416,6 +440,56 @@ button-menu{
     background: rgba(42, 141, 152, 0.449);
 }
 
+/*estilisação do formulario de cadastro*/
+.flexForm{
+    display: flex;
+    color: #444;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(120, 130, 195, 0.3);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
 
+.flexForm > div{
+    margin: auto;
+}
 
-
+#cnpj{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#nomeEmpresa{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#sobreEmpresa{
+    width: 90%;
+    height: 140px;
+    margin: 5px;
+}
+#endereco{
+    width: 60%;
+    height: 60px;
+    margin: 5px;
+}
+#cep{
+    width: 20%;
+    height: 60px;
+    margin: 5px;
+}
+#bairro{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#telefone{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#btnForm{
+    margin-top: 20px;
+}
