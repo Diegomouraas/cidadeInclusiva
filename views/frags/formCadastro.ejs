@@ -5,51 +5,52 @@
     <form  action="/cadastro/novo" method="POST">
         <div class="flexForm containeBox1">
             <div class="form-group" id="nomeEmpresa">
-                <label class="h1text" for="nome_servico">Cadastro:</label>
-                    <select class="form-control" name="cars">
-                        <option value="volvo">local</option>
-                        <option value="saab">roteiro</option>
-                        <option value="fiat">empresa</option>
+                <label class="h1text" for="tipoLocal">Cadastro:</label>
+                    <select class="form-control" name="tipoLocal">
+                        <option value="naoEscolheu">roteiros, empresa ou serviço</option>
+                        <option value="roteiro">roteiro</option>
+                        <option value="empresa">empresa</option>
+                        <option value="servico">serviço</option>
                     </select>
             </div>
             <div class="form-group" id="nomeEmpresa">
-                <label class="h1text" for="nome_servico">email:</label>
-                <input type="text" name="nome_servico" placeholder="email" class="form-control">
+                <label class="h1text" for="email">Email:</label>
+                <input type="text" name="email" placeholder="Email" class="form-control">
             </div>
             <div class="form-group" id="cnpj">
-                <label class="h1text" for="nome_servico">CNPJ:</label>
-                <input type="number" name="nome_servico" placeholder="cnpj ou cpf" class="form-control">
+                <label class="h1text" for="cnpj">CNPJ:</label>
+                <input type="number" name="cnpj" placeholder="CNPJ ou CPF" class="form-control">
             </div>
             <div class="form-group" id="nomeEmpresa">
                 <label class="h1text" for="nome_servico">Nome:</label>
-                <input type="text" name="nome_servico" placeholder="nome do empregador ou empresa" class="form-control">
+                <input type="text" name="nome_servico" placeholder="Nome do Empregador ou Empresa" class="form-control">
             </div>
             <div class="form-group" id="sobreEmpresa">
-                <label class="h1text" for="nome_servico">Descriçao:</label>
+                <label class="h1text" for="descricao">Descriçao:</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>            </div>
             <div class="form-group" id="endereco">
-                <label class="h1text" for="nome_servico">Endereço:</label>
-                <input type="text" name="nome_servico" placeholder="endereço completo" class="form-control">
+                <label class="h1text" for="endereco">Endereço:</label>
+                <input type="text" name="endereco" placeholder="Endereço Completo" class="form-control">
             </div>
             <div class="form-group" id="cep">
-                <label class="h1text" for="nome_servico">CEP:</label>
-                <input type="number" name="nome_servico" placeholder="cep" class="form-control">
+                <label class="h1text" for="cep">CEP:</label>
+                <input type="number" name="cep" placeholder="CEP" class="form-control">
             </div>
             <div class="form-group" id="bairro">
-                <label class="h1text" for="nome_servico">Bairro:</label>
-                <input type="text" name="nome_servico" placeholder="bairro" class="form-control">
+                <label class="h1text" for="bairro">Bairro:</label>
+                <input type="text" name="bairro" placeholder="bairro" class="form-control">
             </div>
             <div class="form-group" id="telefone">
-                <label class="h1text" for="nome_servico">Telefone:</label>
-                <input type="number" name="nome_servico" placeholder="numero de telefone celular" class="form-control">
+                <label class="h1text" for="telCelular">Telefone:</label>
+                <input type="number" name="telCelular" placeholder="Telefone Celular" class="form-control">
             </div>
             <div class="form-group" id="telefone">
-                <label class="h1text" for="nome_servico">Telefone:</label>
-                <input type="number" name="nome_servico" placeholder="numero de telefone fixo" class="form-control">
+                <label class="h1text" for="telFixo">Telefone:</label>
+                <input type="number" name="telFixo" placeholder="Telefone Fixo" class="form-control">
             </div>
             <div class="form-group" id="nomeEmpresa">
-                <label class="h1text" for="nome_servico">Nome:</label>
-                <input type="text" name="nome_servico" placeholder="nome do representante" class="form-control">
+                <label class="h1text" for="nomeRepresentante">Nome:</label>
+                <input type="text" name="nomeRepresentante" placeholder="Nome do Representante" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary col-sm-4 align-center" id="btnForm">Enviar</button>
         </div>
