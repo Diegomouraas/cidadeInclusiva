@@ -53,8 +53,34 @@ const Registro = mongoose.model('registro')
 // Rotas Post
     // Cadastro 
     router.post('/cadastro/novo', (req, res) => {
-        console.log(req.body)
+        //console.log(req.body)
         res.redirect('/cadastro')
+
+        Registro.findOne({id: "1"}).then((lala) => {
+              console.log(lala)
+        })
+            
+        
+        //console.log(indexx)
+/*
+        const novoReg = {
+            id: indexx,
+            status: ,
+            nome: ,
+            cnpj: ,
+            nomeResp: ,
+            telCel: ,
+            telFix: ,
+            descricao: ,
+            tipo: ,
+            selo: ,
+            cep: ,
+            rua: ,
+            num: ,
+            bairro: ,
+            lat: ,
+            long: 
+        }*/
         
     })
 
