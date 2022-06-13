@@ -1,32 +1,43 @@
 /* Reset */
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 /* navbar e hamburger menu */
 
 
-/* Theming */
-:root{
+/* Variaveis de Cores */
+
+:root {
     --white: #f9f9f9;
-    --black: #FFBA00;
+    --lightOrange: #FFBA00;
+    --darkOrange: #FF8700;
     --grey: #85888C;
+    --lightblue: #00FFFF;
+    --darkblue: #00BAFF;
+    --lightgreen: #94FF00;
+    --darkgreen: #59FFDD;
+    --ExtraDarkGreen: #0019FF;
 }
 
-.headerTexts{
+.headerTexts {
     text-decoration: none;
     font-size: 18px;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
+
 /* Header */
-.header{
-    background-color: var(--black);
+
+.header {
+    background-color: var(--lightOrange);
     box-shadow: 1px 1px 5px 0px var(--grey);
     position: fixed;
     top: 0;
@@ -37,45 +48,54 @@ ul{
 
 
 /* Logo */
-.logo{
+
+.logo {
     display: inline-block;
     margin-left: 5%;
     margin-top: 23px;
 }
 
+
 /* Nav menu */
-.nav{
+
+.nav {
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: var(--black);
+    background-color: var(--lightOrange);
     overflow: hidden;
 }
 
-.menu a{
+.menu a {
     display: block;
     padding-top: 35px;
     padding-right: 40px;
     color: var(--white);
 }
 
-.menu a:hover{
-    background-color: var(--grey);
+.menu a:hover {
+    background-color: transparent;
+    color: var(--ExtraDarkGreen);
+    /*Aqui define Transparencia para o menu com mouse */
 }
 
-.nav{
+.nav {
     max-height: 0;
     transition: max-height .5s ease-out;
 }
 
-/* Menu Icon */
-
-.hamb{
-    cursor: pointer;
-    float: right; 
-    padding: 45px 60px;
+#menuSuspenso {
+    background-color: var(--lightOrange);
 }
 
+
+/* Menu Icone do Hambuerguer */
+
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 45px 60px;
+}
 
 .hamb-line {
     background: var(--white);
@@ -87,7 +107,7 @@ ul{
 }
 
 .hamb-line::before,
-.hamb-line::after{
+.hamb-line::after {
     background: var(--white);
     content: '';
     display: block;
@@ -97,140 +117,135 @@ ul{
     width: 100%;
 }
 
-.hamb-line::before{
+.hamb-line::before {
     top: 5px;
 }
 
-.hamb-line::after{
+.hamb-line::after {
     top: -5px;
 }
-
 
 .side-menu {
     display: none;
 }
 
+
 /* Toggle menu icon */
 
-.side-menu:checked ~ nav{
+.side-menu:checked~nav {
     max-height: 50%;
 }
 
-.side-menu:checked ~ .hamb .hamb-line {
+.side-menu:checked~.hamb .hamb-line {
     background: transparent;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::before {
+.side-menu:checked~.hamb .hamb-line::before {
     transform: rotate(-45deg);
-    top:0;
+    top: 0;
 }
 
-.side-menu:checked ~ .hamb .hamb-line::after {
+.side-menu:checked~.hamb .hamb-line::after {
     transform: rotate(45deg);
-    top:0;
+    top: 0;
 }
 
 
 /* Responsiveness */
 
 @media (min-width: 910px) {
-    .nav{
+    .nav {
         max-height: none;
         top: 0;
         position: relative;
         float: right;
         width: fit-content;
         background-color: transparent;
-
     }
-
-    .menu li{
+    .menu li {
         float: left;
     }
-
-    .menu a:hover{
+    .menu a:hover {
         background-color: transparent;
-        color: var(--grey);
-        
+        color: var(--ExtraDarkGreen);
     }
-    
-    .hamb{
+    .hamb {
         display: none;
     }
-
 }
 
 
 /* Estilizando do NavBar */
 
-.row{
+.row {
     margin: 0;
 }
 
-.container{
+.container {
     padding: 10px;
     align-items: center;
 }
 
-
-
- header, .navbar {
-    background-color:#FF8700;
-}
-
-#footerPosition{
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-#nav-container {
-    padding-top:0;
-    padding-bottom:0;
-    position: fixed;
-    padding: 14px,16px;
+header,
+.navbar {
     background-color: #FF8700;
 }
 
-.navbar-brand{
-padding: 0;
-color:#fff
+#footerPosition {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-.navbar-brand:hover{
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+    position: fixed;
+    padding: 14px, 16px;
+    background-color: #FF8700;
+}
+
+.navbar-brand {
+    padding: 0;
     color: #fff
 }
 
-.navbar-expand-lg .navbar-nav .nav-link{
+.navbar-brand:hover {
+    color: #fff
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
     padding: 1rem .8rem;
 }
 
-#logo{
+#logo {
     width: 180px;
 }
 
-/* Estilos do Main */
-.main{
-    padding:16px;
-    margin-top:40px;
 
+/* Estilos do Main */
+
+.main {
+    padding: 16px;
+    margin-top: 40px;
 }
+
 
 /* Estilizando os selos */
-.spaceSelo{
+
+.spaceSelo {
     margin-top: 5px;
     margin-bottom: 5px;
-
 }
+
 
 /* Estilizacao dos textos */
 
-#tituloCenter{
+#tituloCenter {
     text-align: center;
 }
 
-#texto-informativo{
+#texto-informativo {
     background: rgba(255, 255, 255, 0.449);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -243,7 +258,9 @@ color:#fff
     box-sizing: content-box;
 }
 
+
 /* estilizando o rodape  */
+
 #copyrightRodape {
     font-size: 10px;
     padding-top: 10px;
@@ -256,7 +273,9 @@ color:#fff
     position: bottom;
 }
 
+
 /* Dados do Google Maps */
+
 .mapouter {
     position: relative;
     text-align: right;
@@ -264,7 +283,7 @@ color:#fff
     width: 600px;
 }
 
-.main{
+.main {
     position: relative;
     top: 100px;
     margin-left: auto;
@@ -274,12 +293,14 @@ color:#fff
 
 
 /* Plano de fundo com elemnetos da LogoMarcar */
-body{
+
+body {
     background-image: url(../img/cores.svg);
     background-size: 100%;
     background-position-x: right;
     background-repeat: no-repeat;
 }
+
 
 /* Estilizando o Menu Hamburguer responsivo */
 
@@ -329,7 +350,6 @@ label span:nth-child(3) {
     top: 16px;
 }
 
-
 #checkbox-menu:checked+label span:nth-child(1) {
     transform: rotate(-45deg);
     top: 8px;
@@ -344,71 +364,72 @@ label span:nth-child(3) {
     top: 8px;
 }
 
+
 /* Teste com elemento do botao
 #checkbox-menu:checked+label ul:nth-of-type(1){
 display: flex;
 }
 */
 
+
 /* Ocultando menu Mobile */
 
-button-menu{
+button-menu {
     -webkit-appearance: push-button;
     -moz-appearance: button;
     display: inline-block;
     cursor: pointer;
     padding: 5px;
-
 }
 
 
 /*configurações dos card de locais*/
 
-.containeBox{
-	width: 100%;
-	margin: auto;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-flow: wrap;	
-
-}
-    .bigbox{
-        width: 100%;
-        margin: auto;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-flow: wrap;	
-    }
-
-.boxItens{
-	width: 500px;
-	height: 600px;
-	margin: 5px;
-	transition: 1s;
+.containeBox {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap;
 }
 
-.containeBox1{
-	width: 90%;
-	margin: auto;
-	height: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	flex-flow: wrap;	
+.bigbox {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap;
 }
 
-.boxItens1{
-	width: 500px;
-	height: 600px;
-	margin: 20px;
-	transition: 1s;
+.boxItens {
+    width: 500px;
+    height: 600px;
+    margin: 5px;
+    transition: 1s;
 }
 
-.h1text{
+.containeBox1 {
+    width: 90%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.boxItens1 {
+    width: 500px;
+    height: 600px;
+    margin: 20px;
+    transition: 1s;
+}
+
+.h1text {
     color: #FF8700;
     text-align: center;
 }
@@ -428,20 +449,22 @@ button-menu{
     padding-top: 40px;
     min-width: 18rem;
     min-height: 18rem;
-    max-width:18rem;
-    max-height:18rem;
+    max-width: 18rem;
+    max-height: 18rem;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(36, 86, 203, 0.3);
 }
 
-#btnCards{
+#btnCards {
     margin: 0px 30px;
     background: rgba(42, 141, 152, 0.449);
 }
 
+
 /*estilisação do formulario de cadastro*/
-.flexForm{
+
+.flexForm {
     display: flex;
     color: #444;
     backdrop-filter: blur(5px);
@@ -451,45 +474,52 @@ button-menu{
     padding-top: 20px;
 }
 
-.flexForm > div{
+.flexForm>div {
     margin: auto;
 }
 
-#cnpj{
+#cnpj {
     width: 40%;
     height: 60px;
     margin: 5px;
 }
-#nomeEmpresa{
+
+#nomeEmpresa {
     width: 40%;
     height: 60px;
     margin: 5px;
 }
-#sobreEmpresa{
+
+#sobreEmpresa {
     width: 90%;
     height: 140px;
     margin: 5px;
 }
-#endereco{
+
+#endereco {
     width: 60%;
     height: 60px;
     margin: 5px;
 }
-#cep{
+
+#cep {
     width: 20%;
     height: 60px;
     margin: 5px;
 }
-#bairro{
+
+#bairro {
     width: 40%;
     height: 60px;
     margin: 5px;
 }
-#telefone{
+
+#telefone {
     width: 40%;
     height: 60px;
     margin: 5px;
 }
-#btnForm{
+
+#btnForm {
     margin-top: 20px;
 }
