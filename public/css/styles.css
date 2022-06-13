@@ -493,3 +493,7 @@ button-menu{
 #btnForm{
     margin-top: 20px;
 }
+
+#exampleFormControlTextarea1{
+    max-height: 128px;
+}
