@@ -3,6 +3,10 @@ const router = express.Router()
 const mongoose = require('mongoose')
 require('../models/Reg')   
 const Registro = mongoose.model('registro') 
+require('../models/Users')   
+const User = mongoose.model('User') 
+const bcrypt = require('bcrypt')
+const passport = require('passport')
 
 // rotas
     // Index
@@ -44,11 +48,54 @@ const Registro = mongoose.model('registro')
         router.get('/cadastro', (req, res) => {
             res.render('cadastro')
         })
-        
+       
     // Admin
         router.get('/admaciadm', (req, res) => {
             res.render('login')
         })
+
+    // rotas de login
+        router.get("/log", (req, res) => {
+            res.render("login")
+        })
+
+        router.get("/nuser", (req, res) => {
+            res.render("nuser")
+        })
+
+        router.post("/nuserreg", (req, res) => {
+            const novoUsuario = new User({
+                usuario: req.body.usuario,
+                senha: req.body.senha
+            })
+
+            bcrypt.genSalt(10, (erro, salt) => {
+                bcrypt.hash(novoUsuario.senha, salt, (erro, hash) => {
+                    if(erro){
+                        console.log("Erro ao salvar usuario")
+                    }else{
+                        novoUsuario.senha = hash
+
+                        novoUsuario.save().then(() => {
+                            console.log("Usuario salvo")
+                        }).catch((err) => {
+                            console.log(err)
+                            console.log(hash)
+                        })
+                    }
+                })
+            })
+        })
+
+        router.post("/logaci", (req, res) => {
+            
+            passport.authenticate("local", {
+                successRedirect: "/lists",
+                failureRedirect: "/log",
+                //failureFlash: true
+            })(req, res)
+        })
+
 
 // Export
 module.exports = router;

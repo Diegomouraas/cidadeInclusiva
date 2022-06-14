@@ -2,33 +2,49 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+const session = require('express-session')
 const rotas = require('./routes/mainRoutes')
 const mongoose = require('mongoose')
-
+const passport = require('passport')
+require("./config/auth")(passport)
 
 // Configuração
-// View engine
-app.set('view engine', 'ejs')
-app.set('views', 'views')
+
+    //sessão
+        app.use(session({
+            secret: "lala",
+            resave: true,
+            saveUninitialized: true
+        }))
+
+        app.use(passport.initialize())
+        app.use(passport.session())
+
+    // View engine
+        app.set('view engine', 'ejs')
+        app.set('views', 'views')
+
     // middlewares
-app.use(express.static("public"))
+        app.use(express.static("public"))
 
-// bodyParser
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+    // bodyParser
+        app.use(bodyParser.urlencoded({ extended: true }))
+        app.use(bodyParser.json())
+
     // mongoose
-mongoose.connect("mongodb://localhost/angraInclusiva").then(() => {
-    console.log("Aplicação conectada ao servidor com sucesso!")
-}).catch((erro) => {
-    console.log("Erro ao conectar no servidor: " + erro)
-})
+        mongoose.connect("mongodb://localhost/angraInclusiva").then(() => {
+            console.log("Aplicação conectada ao servidor com sucesso!")
+        }).catch((erro) => {
+            console.log("Erro ao conectar no servidor: " + erro)
+        })
 
 
-// Rotas
-app.use('/', rotas)
+    // Rotas
+        app.use('/', rotas)
+        
 
-// outros
-const port = 8082
-app.listen(port, () => {
-    console.log("Servidor aberto na porta: " + port)
-})
+    // outros
+        const port = 8082
+        app.listen(port, () => {
+            console.log("Servidor aberto na porta: " + port)
+        })
