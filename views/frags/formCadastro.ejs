@@ -15,42 +15,43 @@
             </div>
             <div class="form-group" id="nomeEmpresa">
                 <label class="h1text" for="email">Email:</label>
-                <input type="text" name="email" placeholder="Email" class="form-control">
+                <input type="text" name="email" placeholder="Email" class="form-control" required>
             </div>
             <div class="form-group" id="cnpj">
                 <label class="h1text" for="cnpj">CNPJ:</label>
-                <input type="number" name="cnpj" placeholder="CNPJ ou CPF" class="form-control">
+                <input id="ssn" type="text" name="cnpj" placeholder="CNPJ ou CPF" class="form-control" required>
             </div>
             <div class="form-group" id="nomeEmpresa">
                 <label class="h1text" for="nome_servico">Nome:</label>
-                <input type="text" name="nome_servico" placeholder="Nome do Empregador ou Empresa" class="form-control">
+                <input type="text" name="nome_servico" placeholder="Nome do Empregador ou Empresa" class="form-control" required>
             </div>
             <div class="form-group" id="sobreEmpresa">
                 <label class="h1text" for="descricao">Descriçao:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>            </div>
+                <input type="text" name="descricao" class="form-control" id="exampleFormControlTextarea1" rows="4"></input>
+            </div>
             <div class="form-group" id="endereco">
                 <label class="h1text" for="endereco">Endereço:</label>
-                <input type="text" name="endereco" placeholder="Endereço Completo" class="form-control">
+                <input type="text" name="endereco" placeholder="Endereço Completo" class="form-control" required>
             </div>
             <div class="form-group" id="cep">
                 <label class="h1text" for="cep">CEP:</label>
-                <input type="number" name="cep" placeholder="CEP" class="form-control">
+                <input id="tin" type="text" name="cep" placeholder="CEP" class="form-control" required>
             </div>
             <div class="form-group" id="bairro">
                 <label class="h1text" for="bairro">Bairro:</label>
-                <input type="text" name="bairro" placeholder="bairro" class="form-control">
+                <input type="text" name="bairro" placeholder="bairro" class="form-control" required>
             </div>
             <div class="form-group" id="telefone">
                 <label class="h1text" for="telCelular">Telefone:</label>
-                <input type="number" name="telCelular" placeholder="Telefone Celular" class="form-control">
+                <input class="form-control phone" type="text" name="telCelular" placeholder="Telefone Celular" required>
             </div>
             <div class="form-group" id="telefone">
                 <label class="h1text" for="telFixo">Telefone:</label>
-                <input type="number" name="telFixo" placeholder="Telefone Fixo" class="form-control">
+                <input class="form-control phone" type="text" name="telFixo" placeholder="Telefone Fixo" required>
             </div>
             <div class="form-group" id="nomeEmpresa">
                 <label class="h1text" for="nomeRepresentante">Nome:</label>
-                <input type="text" name="nomeRepresentante" placeholder="Nome do Representante" class="form-control">
+                <input type="text" name="nomeRepresentante" placeholder="Nome do Representante" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary col-sm-4 align-center" id="btnForm">Enviar</button>
         </div>
