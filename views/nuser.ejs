@@ -17,6 +17,9 @@
         <%- include ('frags/header.ejs') %>
 
             <div class="main">
+                <% if(warn){ %>
+                    <div class="alert alert-"><%= warn%></div>
+                <%}%>
 
                 <%- include ('frags/nuser.ejs') %>
 

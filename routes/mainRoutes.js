@@ -49,21 +49,19 @@ const passport = require('passport')
             res.render('cadastro')
         })
        
-    // Admin
-        router.get('/admaciadm', (req, res) => {
-            res.render('login')
-        })
+// Admin
 
     // rotas de login
         router.get("/log", (req, res) => {
-            res.render("login")
+            res.render("login", {warn: null})
         })
 
         router.get("/nuser", (req, res) => {
-            res.render("nuser")
+            res.render("nuser", {warn: null})
         })
 
         router.post("/nuserreg", (req, res) => {
+
             const novoUsuario = new User({
                 usuario: req.body.usuario,
                 senha: req.body.senha
@@ -73,14 +71,19 @@ const passport = require('passport')
                 bcrypt.hash(novoUsuario.senha, salt, (erro, hash) => {
                     if(erro){
                         console.log("Erro ao salvar usuario")
+                        var errores = "Erro ao cadastrar usuario"
+                        res.render("nuser", {warn: errores})
                     }else{
                         novoUsuario.senha = hash
 
                         novoUsuario.save().then(() => {
                             console.log("Usuario salvo")
+                            var okres = "Usuario cadastrado"
+                            res.render("nuser", {warn: okres})
                         }).catch((err) => {
                             console.log(err)
-                            console.log(hash)
+                            var errores = "Erro ao cadastrar usuario"
+                            res.render("nuser", {warn: errores})
                         })
                     }
                 })
