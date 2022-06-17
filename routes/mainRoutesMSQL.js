@@ -1,21 +1,19 @@
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
-require('../models/Reg')   
-const Registro = mongoose.model('registro') 
+const Registro = require('../models/RegMSQL')   
 
 // rotas get
     // Index
         router.get('/', (req, res) => {
-
             res.render('index')
+
         })
     
     // Locais acessiveis
         router.get('/locais', (req, res) => {
-            Registro.find().lean().then((cards) => {
+            Registro.findAll().then((cards) => {
                 res.render("locais", {cards: cards})
-                console.log(cards)
+                //console.log(cards)
                 
             }).catch((erro) => {
                 res.render("locais")
@@ -24,7 +22,7 @@ const Registro = mongoose.model('registro')
         })
     // Empresas acessiveis
         router.get('/empresas', (req, res) => {
-            Registro.find().lean().then((cards) => {
+            Registro.findAll().then((cards) => {
                 res.render("empresas", {cards: cards})
                 
             }).catch((erro) => {
@@ -33,7 +31,7 @@ const Registro = mongoose.model('registro')
         })
     // Servicos acessiveis
         router.get('/servicos', (req, res) => {
-            Registro.find().lean().then((cards) => {
+            Registro.findAll().then((cards) => {
                 res.render("servicos", {cards: cards})
                 
             }).catch((erro) => {

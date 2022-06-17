@@ -2,7 +2,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const rotas = require('./routes/mainRoutes')
+const rotas = require('./routes/mainRoutesMSQL')
 
 // Configuração
     // View engine
