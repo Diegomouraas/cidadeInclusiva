@@ -1,6 +1,6 @@
 const db = require('./MySqlDB')
 
-const Reg = db.sequelize.define('Reg', {
+const RegMSQL = db.sequelize.define('Reg', {
         stat: {
             type: db.Sequelize.INTEGER
         },
@@ -51,4 +51,5 @@ const Reg = db.sequelize.define('Reg', {
         }
 })
 
+module.exports = RegMSQL
 //Reg.sync({force:true})
