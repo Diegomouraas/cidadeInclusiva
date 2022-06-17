@@ -4,6 +4,8 @@
     "ejs": "^3.0.2",
     "express": "^4.17.3",
     "jquery": "^3.6.0",
-    "mongoose": "^6.2.10"
+    "mongoose": "^6.2.10",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.0"
   }
 }
