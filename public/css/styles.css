@@ -471,7 +471,12 @@ button-menu{
     margin: 5px;
 }
 #endereco{
-    width: 60%;
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#numero{
+    width: 10%;
     height: 60px;
     margin: 5px;
 }
