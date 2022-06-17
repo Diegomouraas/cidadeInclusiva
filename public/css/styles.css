@@ -496,8 +496,13 @@ button-menu {
     margin: 5px;
 }
 
-#endereco {
-    width: 60%;
+#endereco{
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+#numero{
+    width: 10%;
     height: 60px;
     margin: 5px;
 }
@@ -522,4 +527,9 @@ button-menu {
 
 #btnForm {
     margin-top: 20px;
+}
+
+#exampleFormControlTextarea1{
+    max-height: 128px;
+    height: 120px
 }

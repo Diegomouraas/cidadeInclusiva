@@ -12,12 +12,32 @@ const Registro = new Schema({
         required: true
     },
 
+    status:  {
+        type: Number,
+        required: true
+    },
+
     nome: {
         type: String,
         required: true
     },
 
     cnpj: {
+        type: Number,
+        required: true
+    },
+
+    nomeResp: {
+        type: String, 
+        required: true
+    },
+
+    telCel: {
+        type: Number,
+        required: true
+    },
+
+    telFix: {
         type: Number,
         required: true
     },
@@ -34,7 +54,7 @@ const Registro = new Schema({
 
     selo: {
         type: Number,
-        required: true
+        required: false
     },
 
     cep: {
@@ -42,19 +62,29 @@ const Registro = new Schema({
         required: true
     },
 
+    rua: {
+        type: String,
+        required: false
+    },
+
     num: {
         type: Number,
         required: true
     },
 
+    bairro: {
+        type: String,
+        required: false
+    },
+
     lat: {
         type: Number,
-        required: true
+        required: false
     },
 
     long: {
         type: Number,
-        required: true
+        required: false
     },
 
 })

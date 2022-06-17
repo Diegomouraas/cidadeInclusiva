@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 require('../models/Reg')   
 const Registro = mongoose.model('registro') 
 
-// rotas
+// rotas get
     // Index
         router.get('/', (req, res) => {
 
@@ -49,6 +49,14 @@ const Registro = mongoose.model('registro')
         router.get('/admaciadm', (req, res) => {
             res.render('login')
         })
+
+// Rotas Post
+    // Cadastro 
+    router.post('/cadastro/novo', (req, res) => {
+        console.log(req.body)
+        res.redirect('/cadastro')
+        
+    })
 
 // Export
 module.exports = router;
