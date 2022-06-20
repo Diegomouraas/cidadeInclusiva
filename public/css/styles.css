@@ -24,6 +24,11 @@
     --ExtraDarkGreen: #0019FF;
 }
 
+#carousel {
+    background-color: transparent;
+    border-radius: 15px;
+}
+
 .headerTexts {
     text-decoration: none;
     font-size: 18px;
@@ -242,7 +247,17 @@ header,
 /* Estilizacao dos textos */
 
 #tituloCenter {
-    text-align: center;
+    /* Estilizacao dos textos */
+    text-align: left;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+}
+
+.pagPrincipal {
+    text-decoration: solid;
+    text-align: left;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
 }
 
 #texto-informativo {
@@ -365,13 +380,6 @@ label span:nth-child(3) {
 }
 
 
-/* Teste com elemento do botao
-#checkbox-menu:checked+label ul:nth-of-type(1){
-display: flex;
-}
-*/
-
-
 /* Ocultando menu Mobile */
 
 button-menu {
@@ -434,13 +442,16 @@ button-menu {
     text-align: center;
 }
 
+h1 {
+    color: #FF8700;
+    text-align: center;
+    font-size: large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+}
+
 
 /*textImageMenu estilisa o texto e imagen no menu */
-
-.textImageMenu {
-    width: 400px;
-    margin-bottom: 50px;
-}
 
 #cardLocais {
     border-radius: 5px;
@@ -496,12 +507,13 @@ button-menu {
     margin: 5px;
 }
 
-#endereco{
+#endereco {
     width: 40%;
     height: 60px;
     margin: 5px;
 }
-#numero{
+
+#numero {
     width: 10%;
     height: 60px;
     margin: 5px;
@@ -529,7 +541,7 @@ button-menu {
     margin-top: 20px;
 }
 
-#exampleFormControlTextarea1{
+#exampleFormControlTextarea1 {
     max-height: 128px;
-    height: 120px
+    height: 120p;
 }
