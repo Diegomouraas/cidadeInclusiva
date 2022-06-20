@@ -508,7 +508,13 @@ h1 {
 }
 
 #endereco {
-    width: 60%;
+    width: 40%;
+    height: 60px;
+    margin: 5px;
+}
+
+#numero {
+    width: 10%;
     height: 60px;
     margin: 5px;
 }
@@ -537,4 +543,5 @@ h1 {
 
 #exampleFormControlTextarea1 {
     max-height: 128px;
+    height: 120p;
 }

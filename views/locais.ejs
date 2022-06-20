@@ -1,3 +1,4 @@
+<!-- LOCAIS -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,26 +21,32 @@
                 <h2 class="h1text">Locais Acessiveis</h2>
                 <br>
 
-                <div class="container-fluid">
-                    <div class="row">
-                        <% for(let i=0; i<cards.length; i++) {%>
-                            <div class="col-lg-2" id="cardLocais">
-                                <h5 class="card-title">
-                                    <%= cards[i].nome %>
-                                </h5>
-                                <p class="card-text">
-                                    <%= cards[i].descricao %>
-                                </p>
-                                <p class="card-text">
-                                    <%= cards[i].celo %>
-                                </p>
-                                <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">ver mais</a>
-                            </div>
-                            <% } %>
-                    </div>
-                </div>
 
-            </div>
+                <br><br>
+                <h2 class="h1text">Locais Acessiveis</h1>
+                    <br><br>
+
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <% for(let i=0; i<cards.length; i++) {%>
+                                <%if (cards[i].tipo==1){%>
+                                    <div class="col-lg-2" id="cardLocais">
+                                        <h5 class="card-title">
+                                            <%= cards[i].nome %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= cards[i].descricao %>
+                                        </p>
+                                        <p class="card-text">
+                                            <%= cards[i].celo %>
+                                        </p>
+                                        <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">ver mais</a>
+                                    </div>
+                                    <% } %>
+                                        <% } %>
+                        </div>
+                    </div>
     </section>
 
     <br>

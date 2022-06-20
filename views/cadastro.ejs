@@ -17,6 +17,52 @@
     <%- include ('frags/formCadastro.ejs') %>
     <%- include ('frags/footer.ejs') %> 
     <script src="js/bootstrap.js"></script>
+
+    <!-- autoformatação do cadastro -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="js/cleave.js"></script>
+    <script>
+        new Cleave('.CEP',{
+            delimiter: '-',
+            blocks: [5,3],
+        });
+        new Cleave('.celular',{
+            prefix: '(',
+            delimiters: [') ', '-'],
+            blocks: [3,5,4],
+        });
+        new Cleave('.celularA',{
+            prefix: '(',
+            delimiters: [') ', '-'],
+            blocks: [3,5,4],
+        });
+
+    
+var activeFormat;
+
+$('.cpfj').on('keyup', function() {
+    if (activeFormat != null)
+   	{
+    	activeFormat.destroy();
+      activeFormat = null;
+    }
+    
+    if ($(this).val().length <= 14) {
+      activeFormat = new Cleave('.cpfj', {
+        numericOnly: true,
+        blocks: [3, 3, 3, 3],
+        delimiters : ['.', '.', '-']			
+      });
+    }
+    else {
+      activeFormat = new Cleave('.cpfj', {
+        numericOnly: true,
+        blocks: [2, 3, 3, 4, 2],
+        delimiters : ['.', '.', '/', '-']
+      });			
+    }
+  });
+    </script>
 </body>
 
 </html>

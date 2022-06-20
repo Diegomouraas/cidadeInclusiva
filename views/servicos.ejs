@@ -1,3 +1,4 @@
+<!-- ROTEIROS -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,20 +23,28 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        <% for(let i=0; i<20; i++) {%>
-                            <div class="col-lg-2" id="cardLocais">
-                                <h5 class="card-title">Texto exemplo</h5>
-                                <p class="card-text">texto de exemplo texto de exemplo texto de exemplo texto de exemplo texto de exemplo. tetiajobdowbdabowjdbaowdb obdowbdabowjdbaowdb obdowbdabowjdbaowdb</p>
-                                <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">sobre</a>
-                            </div>
-                            <% } %>
+                        <% for(let i=0; i<cards.length; i++) {%>
+                            <%if (cards[i].tipo==2){%>
+                                <div class="col-lg-2" id="cardLocais">
+                                    <h5 class="card-title">
+                                        <%= cards[i].nome %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= cards[i].descricao %>
+                                    </p>
+                                    <p class="card-text">
+                                        <%= cards[i].celo %>
+                                    </p>
+                                    <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">ver mais</a>
+                                </div>
+                                <% } %>
+                                    <% } %>
                     </div>
+
+                    <br><br>
+
+                    <%- include ('frags/footer.ejs') %>
                 </div>
-
-                <br><br>
-
-                <%- include ('frags/footer.ejs') %>
-            </div>
     </section>
     <script src="js/bootstrap.js"></script>
 </body>
