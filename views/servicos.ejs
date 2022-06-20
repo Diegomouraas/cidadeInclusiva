@@ -12,49 +12,18 @@
     <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon" />
 </head>
 
+
 <body>
     <section>
         <%- include ('frags/header.ejs') %>
             <div class="main">
-
+                <br><br>
+                <h2 class="h1text">Serviços Acessiveis</h1>
                 <br>
-                <h2 class="h1text">Locais Acessiveis</h2>
+                <%- include ('frags/cardsLoop.ejs') %>
                 <br>
-
-                <div class="container-fluid">
-                    <div class="row">
-                        <% for(let i=0; i<cards.length; i++) {%>
-                            <%if (cards[i].tipo==2){%>
-                                <div class="col-lg-2" id="cardLocais">
-                                    <h5 class="card-title">
-                                        <%= cards[i].nome %>
-                                    </h5>
-                                    <p class="card-text">
-                                        <%= cards[i].descricao %>
-                                    </p>
-                                    <p class="card-text">
-                                        <%= cards[i].celo %>
-                                    </p>
-                                    <a href="#" class="btn btn-primary align-center col-sm-4" id="btnCards">ver mais</a>
-                                    <!-- seletor de selos -->
-                                    <%if (cards[i].selo==1){%>
-                                        <img class="seloCards" src="/img/Ouro.png" alt="...">
-                                        <% } 
-                                        else if (cards[i].selo==2){%>
-                                            <img class="seloCards" src="/img/Prata.png" alt="...">
-                                            <% }
-                                            else if (cards[i].selo==3){%>
-                                                <img class="seloCards" src="/img/Bronze.png" alt="...">
-                                                <% } %>
-                                </div>
-                                <% } %>
-                                    <% } %>
-                    </div>
-
-                    <br><br>
-
-                    <%- include ('frags/footer.ejs') %>
-                </div>
+                <%- include ('frags/footer.ejs') %>
+            </div>
     </section>
     <script src="js/bootstrap.js"></script>
 </body>
