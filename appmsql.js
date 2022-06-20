@@ -20,7 +20,7 @@ const rotas = require('./routes/mainRoutesMSQL')
         app.use('/', rotas)
 
 // outros
-    const port = 8082
+    const port = 1433
     app.listen(port, () => {
         console.log("Servidor aberto na porta: " + port)
     })
