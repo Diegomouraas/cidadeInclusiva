@@ -40,6 +40,15 @@ const Registro = mongoose.model('registro')
                 res.render("servicos")
             })
         })
+    // Roteiros acessiveis
+    router.get('/roteiros', (req, res) => {
+        Registro.find().lean().then((cards) => {
+            res.render("roteiros", {cards: cards})
+            
+        }).catch((erro) => {
+            res.render("roteiros")
+        })
+    })
     // cadastro
         router.get('/cadastro', (req, res) => {
             res.render('cadastro')
