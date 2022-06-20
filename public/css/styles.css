@@ -462,22 +462,55 @@ h1 {
 
 #cardLocais {
     border-radius: 5px;
-    background: rgba(42, 141, 152, 0.56);
+    background: rgba(0, 186, 255, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     margin: 10px auto;
-    padding-top: 40px;
+    padding-top: 20px;
     min-width: 18rem;
     min-height: 18rem;
     max-width: 18rem;
     max-height: 18rem;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(36, 86, 203, 0.3);
+    border: 1.5px solid rgba(0, 25, 255, 0.8);
+    text-align: center;
 }
 
 #btnCards {
-    margin: 0px 30px;
-    background: rgba(42, 141, 152, 0.449);
+    position: absolute;
+    bottom: 10px;
+    left: 6rem;
+    background: #FF8700;
+    border: 1.5px solid rgba(0, 25, 255, 0.4);
 }
+
+
+/* titulo dos cards */
+
+.card-title {
+    color: rgba(0, 25, 255, 0.7);
+    text-align: center;
+}
+
+
+/* selos dos cards */
+
+.seloCards {
+    min-width: 5rem;
+    min-height: 5rem;
+    max-width: 5rem;
+    max-height: 5rem;
+    position: absolute;
+    top: -1.5rem;
+    right: -0.5rem;
+    transform: rotate(20deg);
+}
+
+
+/* 
+outra opção para os selos
+    bottom: 4px;
+    left: 1rem;
+     */
 
 
 /*estilisação do formulario de cadastro*/
