@@ -2,15 +2,16 @@
     <br>
     <h2 class="h1text">Formulario de Cadastro</h2>
     <br>
-    <form  action="/cadastro/novo" method="POST">
+    <form action="/cadastro/novo" method="POST">
         <div class="flexForm containeBox1">
             <div class="form-group" id="nomeEmpresa">
                 <label class="h1text" for="tipoLocal">Cadastro:</label>
-                    <select class="form-control" name="tipoLocal">
+                <select class="form-control" name="tipoLocal">
                         <option value="naoEscolheu">roteiros, empresa ou serviço</option>
-                        <option value="roteiro">roteiro</option>
-                        <option value="empresa">empresa</option>
-                        <option value="servico">serviço</option>
+                        <option value="1">local</option>
+                        <option value="2">serviço</option>
+                        <option value="3">roteiro</option>
+                        <option value="4">empresa</option>
                     </select>
             </div>
             <div class="form-group" id="nomeEmpresa">
@@ -27,7 +28,7 @@
             </div>
             <div class="form-group" id="sobreEmpresa">
                 <label class="h1text" for="descricao">Descriçao:</label>
-                <input type="text" name="descricao" class="form-control" id="exampleFormControlTextarea1" rows="4"></input>
+                <input type="text" name="descricao" class="form-control" id="textArea" rows="4"></input>
             </div>
             <div class="form-group" id="endereco">
                 <label class="h1text" for="endereco">Endereço:</label>
@@ -39,7 +40,7 @@
             </div>
             <div class="form-group" id="cep">
                 <label class="h1text" for="cep">CEP:</label>
-                <input class="form-control CEP"  name="cep" placeholder="CEP" required>
+                <input class="form-control CEP" name="cep" placeholder="CEP" required>
             </div>
             <div class="form-group" id="bairro">
                 <label class="h1text" for="bairro">Bairro:</label>
@@ -47,11 +48,11 @@
             </div>
             <div class="form-group" id="telefone">
                 <label class="h1text" for="telCelular">Telefone:</label>
-                <input class="form-control celular"  name="telCelular" placeholder="Telefone Celular" required>
+                <input class="form-control celular" name="telCelular" placeholder="Telefone Celular" required>
             </div>
             <div class="form-group" id="telefone">
                 <label class="h1text" for="telFixo">Telefone:</label>
-                <input class="form-control celularA"  name="telFixo" placeholder="Telefone Fixo" required>
+                <input class="form-control celularA" name="telFixo" placeholder="Telefone Fixo" required>
             </div>
             <div class="form-group" id="nomeEmpresa">
                 <label class="h1text" for="nomeRepresentante">Nome:</label>
