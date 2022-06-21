@@ -1,50 +1,63 @@
+
 <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Requerente</th>
             <th scope="col">CNPJ</th>
-            <th scope="col">Tele</th>
-            <th scope="col">Local</th>
-            <th scope="col">data/aquisicao</th>
+            <th scope="col">Celular</th>
+            <th scope="col">CEP</th>
+            <th scope="col">N°</th>
+            <th scope="col">data</th>
             <th scope="col">selo</th>
-            <th scope="col">AN</th>
+            <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody>
         <% for(let i=0; i<pendentes.length; i++) {%>
-            <tr>
-                <th scope="row">
-                    <%=i+1%>
-                </th>
-                <td>
-                    <%= pendentes[i].nome %>
-                </td>
-                <td>
-                    <%= pendentes[i].cnpj %>
-                </td>
-                <td>
-                    <%= pendentes[i].telefone %>
-                </td>
-                <td>
-                    <%= pendentes[i].local %>
-                </td>
-                <td>
-                    <%= pendentes[i].data %>
-                </td>
-                <td>
-                    <select class="form-control" name="seloSelect">
-                        <option value="naoEscolheu">Escolha Selo</option>
-                        <option value="ouro">Ouro</option>
-                        <option value="prata">Prata</option>
-                        <option value="bronze">Bronze</option>
-                    </select>
-                </td>
-                <td>
-                    <button type="submit" class="btn btn-primary col-sm-4" id="btnForm">Aceitar</button>
-                    <button type="submit" class="btn btn-primary col-sm-4" id="btnForm">Negar</button>
-                </td>
-            </tr>
+            <form action="/cad/sent" method="POST">
+                <tr>
+                    <th scope="row">
+                       <%=pendentes[i].id%>
+                    </th>
+                    <td>
+                        <%= pendentes[i].nomeloc %>
+                    </td>
+                    <td>
+                        <%= pendentes[i].cnpj %>
+                    </td>
+                    <td>
+                        <%= pendentes[i].numcel %>
+                    </td>
+                    <td>
+                        <%= pendentes[i].cep %>
+                    </td>
+                    <td>
+                        <%= pendentes[i].num %>
+                    </td>
+                    <td>
+                        <%= pendentes[i].createdAt.toLocaleDateString('el-GR') %>
+                    </td>
+                    <td>
+                        <select class="form-control" name="seloSelect">
+                            <option value="0">Escolha Selo</option>
+                            <option value="ouro">Ouro</option>
+                            <option value="prata">Prata</option>
+                            <option value="bronze">Bronze</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="hidden" name="id" value="<%=pendentes[i].id%>">
+                        <button type="submit" name="sent" value="1" class="btn btn-primary col-sm-4" id="btnForm">Aceitar</button>
+                    
+                        <button type="submit" name="sent" value="2" class="btn btn-primary col-sm-4" id="btnForm">Negar</button>
+                    
+                    </td>
+                    <td>
+                        <%= pendentes[i].stat %>
+                    </td>
+                </tr>
+            </form>
             <% } %>
     </tbody>
 </table>

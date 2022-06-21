@@ -54,7 +54,13 @@ const Registro = require('../models/RegMSQL')
         
     // Admin
         router.get('/admaciadm', (req, res) => {
-            res.render('login')
+            Registro.findAll().then((pendentes) => {
+                res.render("admin", {pendentes: pendentes})
+
+            }).catch((erro) => {
+                res.render("admin")
+            })
+            
         })
 
 // Rotas Post
@@ -85,6 +91,15 @@ const Registro = require('../models/RegMSQL')
         res.redirect('/cadastro')
         
     })
+
+    // Cadastro
+        router.post('/cad/sent', async (req, res) => {
+            console.log(req.body)
+        })
+
+        router.post('/cad/decline', async (req, res) => {
+            
+        })
 
 // Export
 module.exports = router;
