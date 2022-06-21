@@ -40,7 +40,7 @@ const Registro = require('../models/RegMSQL')
         })
     // Roteiros acessiveis
     router.get('/roteiros', (req, res) => {
-        Registro.find().lean().then((cards) => {
+        Registro.findAll().then((cards) => {
             res.render("roteiros", {cards: cards})
             
         }).catch((erro) => {
@@ -59,8 +59,29 @@ const Registro = require('../models/RegMSQL')
 
 // Rotas Post
     // Cadastro 
-    router.post('/cadastro/novo', (req, res) => {
+    router.post('/cadastro/novo', async (req, res) => {
         console.log(req.body)
+        
+        const novoCad = await Registro.create({
+            stat: 0,
+            nomeloc: req.body.nome_servico,
+            cnpj: req.body.cnpj,
+            descricao: req.body.descricao,
+            tipo: req.body.tipoLocal,
+            selo: 0,
+            cep: req.body.cep,
+            rua: req.body.endereco,
+            num: req.body.numero,
+            bairro: req.body.bairro,
+            nomeresp: req.body.nomeRepresentante,
+            email: req.body.email,
+            numfix: req.body.telFixo,
+            numcel: req.body.telCelular,
+            lat: 0,
+            longt: 0
+
+        })
+
         res.redirect('/cadastro')
         
     })
