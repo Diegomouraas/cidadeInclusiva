@@ -52,4 +52,4 @@ const RegMSQL = db.sequelize.define('Reg', {
 })
 
 module.exports = RegMSQL
-//Reg.sync({force:true})
+//RegMSQL.sync({force:true})
