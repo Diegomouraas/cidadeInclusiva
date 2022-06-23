@@ -474,6 +474,7 @@ h1 {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     margin: 10px auto;
+    margin-bottom: 20px;
     padding-top: 20px;
     min-width: 18rem;
     min-height: 18rem;
@@ -481,6 +482,13 @@ h1 {
     max-height: 18rem;
     border: 1.5px solid rgba(0, 25, 255, 0.8);
     text-align: center;
+}
+
+#cardSpace {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #btnCards {

@@ -17,37 +17,37 @@
         <%- include ('frags/header.ejs') %>
             <div class="main">
                 <br><br>
-                <h2 class="h1text">Empresas Acessiveis</h1>
+                <h2 class="h1text">Empresas Acessiveis</h2>
                 <br>
                 <!--Loop seletor de cards-->
-<div class="container-fluid">
-    <div class="row">
-        <% for(let i=0; i<cards.length; i++) {%>
-            <%if (cards[i].tipo==4){%>
-                <div class="col-lg-2" id="cardLocais">
-                    <h5 class="card-title">
-                        <%= cards[i].nome %>
-                    </h5>
-                    <p class="card-text">
-                        <%= cards[i].descricao %>
-                    </p>
-                    <a href="#" class="btn btn-primary col-sm-4" id="btnCards">ver mais</a>
+                <div class="container-fluid">
+                    <div class="row" id="cardSpace">
+                        <% for(let i=0; i<cards.length; i++) {%>
+                            <%if (cards[i].tipo==4){%>
+                                <div class="col-lg-2" id="cardLocais">
+                                    <h5 class="card-title">
+                                        <%= cards[i].nome %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= cards[i].descricao %>
+                                    </p>
+                                    <a href="#" class="btn btn-primary col-sm-4" id="btnCards">ver mais</a>
 
-                    <!-- seletor de selos -->
-                    <%if (cards[i].selo==1){%>
-                        <img class="seloCards" src="/img/Ouro.png" alt="...">
-                        <% } 
+                                    <!-- seletor de selos -->
+                                    <%if (cards[i].selo==1){%>
+                                        <img class="seloCards" src="/img/Ouro.png" alt="...">
+                                        <% } 
                         else if (cards[i].selo==2){%>
-                            <img class="seloCards" src="/img/Prata.png" alt="...">
-                            <% }
+                                            <img class="seloCards" src="/img/Prata.png" alt="...">
+                                            <% }
                             else if (cards[i].selo==3){%>
-                                <img class="seloCards" src="/img/Bronze.png" alt="...">
+                                                <img class="seloCards" src="/img/Bronze.png" alt="...">
+                                                <% } %>
+                                </div>
                                 <% } %>
+                                    <% } %>
+                    </div>
                 </div>
-                <% } %>
-                    <% } %>
-    </div>
-</div>
                 <br>
                 <%- include ('frags/footer.ejs') %>
             </div>
