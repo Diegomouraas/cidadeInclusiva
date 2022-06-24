@@ -18,8 +18,8 @@ const Registro = require('../models/RegMSQL')
             }).catch((erro) => {
                 res.render("locais")
             })
-           
         })
+
     // Empresas acessiveis
         router.get('/empresas', (req, res) => {
             Registro.findAll().then((cards) => {
@@ -29,6 +29,7 @@ const Registro = require('../models/RegMSQL')
                 res.render("empresas")
             })
         })
+
     // Servicos acessiveis
         router.get('/servicos', (req, res) => {
             Registro.findAll().then((cards) => {
@@ -38,15 +39,22 @@ const Registro = require('../models/RegMSQL')
                 res.render("servicos")
             })
         })
+
     // Roteiros acessiveis
-    router.get('/roteiros', (req, res) => {
-        Registro.find().lean().then((cards) => {
-            res.render("roteiros", {cards: cards})
-            
-        }).catch((erro) => {
-            res.render("roteiros")
+        router.get('/roteiros', (req, res) => {
+            Registro.find().lean().then((cards) => {
+                res.render("roteiros", {cards: cards})
+                
+            }).catch((erro) => {
+                res.render("roteiros")
+            })
         })
-    })
+
+    // suporte
+        router.get('/suporte', (req, res) => {
+            res.render('suporte')
+        })
+
     // cadastro
         router.get('/cadastro', (req, res) => {
             res.render('cadastro')
@@ -59,11 +67,11 @@ const Registro = require('../models/RegMSQL')
 
 // Rotas Post
     // Cadastro 
-    router.post('/cadastro/novo', (req, res) => {
-        console.log(req.body)
-        res.redirect('/cadastro')
-        
-    })
+        router.post('/cadastro/novo', (req, res) => {
+            console.log(req.body)
+            res.redirect('/cadastro')
+            
+        })
 
 // Export
 module.exports = router;
