@@ -601,3 +601,7 @@ outra opção para os selos
     max-height: 128px;
     height: 120px;
 }
+
+#cpfCheck{
+    position: absolute;
+}
