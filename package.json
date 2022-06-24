@@ -13,6 +13,6 @@
     "sequelize": "^6.21.0"
   },
   "scripts": {
-    "script1": "node RegMSQL.js"
+    "start": "node appmsql.js"
   }
 }

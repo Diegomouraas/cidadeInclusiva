@@ -37,7 +37,7 @@ require("./config/auth")(passport)
         app.use('/', rotas)
 
 // outros
-    const port = 1433
+    const port = process.env.PORT || 1434
     app.listen(port, () => {
         console.log("Servidor aberto na porta: " + port)
     })
