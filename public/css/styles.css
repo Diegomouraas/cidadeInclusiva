@@ -7,9 +7,6 @@
 }
 
 
-/* navbar e hamburger menu */
-
-
 /* Variaveis de Cores */
 
 :root {
@@ -266,9 +263,14 @@ header,
 
 .pagPrincipal {
     text-decoration: solid;
-    text-align: left;
+    text-align: justify;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
+}
+
+.tr {
+    text-decoration: solid;
+    text-align: center;
 }
 
 #texto-informativo {
@@ -281,6 +283,21 @@ header,
     margin-bottom: 10px;
     text-indent: 5rem;
     box-sizing: content-box;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 186, 255, 0.3);
+}
+
+#table-informativo {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 186, 255, 0.3);
+}
+
+#table {
+    background: rgba(255, 255, 255, 0.449);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-sizing: content-box;
+    text-align: justify;
     border-radius: 15px;
     border: 1px solid rgba(0, 186, 255, 0.3);
 }
@@ -298,6 +315,14 @@ header,
 #rodape {
     align-items: flex-end;
     position: bottom;
+}
+
+#faleConosco {
+    text-align: center;
+    text-align: justify;
+    color: var(--darkOrange);
+    text-align: center;
+    font-size: 1.5em;
 }
 
 
