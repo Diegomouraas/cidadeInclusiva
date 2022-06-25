@@ -14,12 +14,16 @@
 <body>
     <section>
 
-        <%- include ('frags/header.ejs') %>
+        <%- include ('frags/headerAdmin.ejs') %>
 
-            <div class="main">
-                <% if(warn){ %>
-                    <div class="alert alert-"><%= warn%></div>
-                <%}%>
+            
+        <% if(warn){ %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong><%= warn%></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <%}%>
+            
 
                 
         <div class="login container form-group col-lg-6">

@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <% for(let i=0; i<users.length; i++) {%>
-            <form action="/cad/sent" method="POST">
+            <form action="/user/act" method="POST">
                 <tr>
                     <th scope="row">
                        <%= users[i].id%>
@@ -26,6 +26,7 @@
                     </td>
                     <td>
                         <input type="hidden" name="id" value="<%=users[i].id%>">
+                        <input type="hidden" name="eAdmin" value="<%=users[i].eAdmin%>">
                         <button type="submit" name="sent" value="1" class="btn btn-danger col-sm-2" id="btnForm">Deletar</button>
                     
                         <button type="submit" name="sent" value="2" class="btn btn-primary col-sm-2" id="btnForm">Mudar tipo</button>

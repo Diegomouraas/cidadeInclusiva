@@ -86,6 +86,32 @@ const {loged} = require('../helpers/loged')
             
         })
 
+        router.post('/user/act', eAdmin, async (req, res) => {
+            if(req.body == undefined || 
+                req.body == null) res.redirect("/userlist")
+
+            if(req.body.id === undefined || 
+                req.body.eAdmin === undefined || 
+                req.body.sent === undefined) res.redirect("/userlist")
+
+            if(req.body.id === null || 
+                req.body.eAdmin === null || 
+                req.body.sent === null) res.redirect("/userlist")
+
+            if(req.body.sent == 1){//deletar usuario
+                Usuario.destroy({where: {id: req.body.id}});
+            } else if(req.body.sent == 2){//mudar tipo do usuario
+                if(req.body.eAdmin == 0){
+                    Usuario.update({eAdmin:1}, {where: {id:req.body.id}})
+                }else if(req.body.eAdmin == 1){
+                    Usuario.update({eAdmin:0}, {where: {id:req.body.id}})
+                }
+            }else{
+                res.redirect("/userlist")
+            }
+            res.redirect("/userlist")
+        })
+
         // rotas de login
             router.get("/log", (req, res) => {
                 res.render("login", {warn: null})
@@ -95,44 +121,71 @@ const {loged} = require('../helpers/loged')
                 res.render("nuser", {warn: null})
             })
 
-            router.post("/nuserreg", eAdmin, (req, res) => {
+            router.post("/nuserreg", eAdmin, async (req, res) => {
+                if(req.body == undefined || 
+                    req.body == null) {
+                        res.redirect("/nuser")
+                }
+    
+                if(req.body.usuario === undefined ||  
+                    req.body.senha === undefined) {
+                        res.redirect("/nuser")
+                }
+    
+                if(req.body.usuario === null ||  
+                    req.body.senha === null) {
+                        res.redirect("/nuser")
+                }
 
-                const novoUsuario = new Usuario({
-                    usuario: req.body.usuario,
-                    senha: req.body.senha,
-                    eAdmin: req.body.eAdmin
-                })
-
-                bcrypt.genSalt(8, (erro, salt) => {
-                    bcrypt.hash(novoUsuario.senha, salt, async (erro, hash) => {
-                        if(erro){
-                            console.log("Erro ao salvar usuario")
-                            var errores = "Erro ao cadastrar usuario"
-                            res.render("nuser", {warn: errores})
-                        }else{
-                            novoUsuario.senha = hash
-
-                            if(novoUsuario.eAdmin){
-                                novoUsuario.eAdmin = 1
-                            }else{
-                                novoUsuario.eAdmin = 0
-                            }
-
-                            await Usuario.create({
-                                usuario: novoUsuario.usuario,
-                                senha: novoUsuario.senha,
-                                eAdmin: novoUsuario.eAdmin
-                            }).then(() => {
-                                console.log("Usuario salvo")
-                                var okres = "Usuario cadastrado"
-                                res.render("nuser", {warn: okres})
-                            }).catch((err) => {
-                                console.log(err)
-                                var errores = "Erro ao cadastrar usuario"
-                                res.render("nuser", {warn: errores})
+                console.log(req.body.usuario)
+                await Usuario.findOne({where: {usuario: req.body.usuario}}).then((user) =>{
+                    console.log(user)
+                    if(user){
+                        var errores = "Usuario ja existe"
+                        res.render("nuser", {warn: errores})
+                    }else{
+                        const novoUsuario = new Usuario({
+                            usuario: req.body.usuario,
+                            senha: req.body.senha,
+                            eAdmin: req.body.eAdmin
+                        })
+        
+                        bcrypt.genSalt(8, (erro, salt) => {
+                            bcrypt.hash(novoUsuario.senha, salt, async (erro, hash) => {
+                                if(erro){
+                                    console.log("Erro ao salvar usuario")
+                                    var errores = "Erro ao cadastrar usuario"
+                                    res.render("nuser", {warn: errores})
+                                }else{
+                                    novoUsuario.senha = hash
+        
+                                    if(novoUsuario.eAdmin){
+                                        novoUsuario.eAdmin = 1
+                                    }else{
+                                        novoUsuario.eAdmin = 0
+                                    }
+        
+                                    await Usuario.create({
+                                        usuario: novoUsuario.usuario,
+                                        senha: novoUsuario.senha,
+                                        eAdmin: novoUsuario.eAdmin
+                                    }).then(() => {
+                                        console.log("Usuario salvo")
+                                        var okres = "Usuario cadastrado"
+                                        res.render("nuser", {warn: okres})
+                                    }).catch((err) => {
+                                        console.log(err)
+                                        var errores = "Erro ao cadastrar usuario"
+                                        res.render("nuser", {warn: errores})
+                                    })
+                                }
                             })
-                        }
-                    })
+                        })
+                    }
+                }).catch((err) => {
+                    console.log(err)
+                    var errores = "houve um erro durante cadastro"
+                    res.render("nuser", {warn: errores})
                 })
             })
 
