@@ -77,7 +77,7 @@ const {loged} = require('../helpers/loged')
         })
 
         router.get('/userlist', eAdmin, (req, res) => {
-            Registro.findAll().then((users) => {
+            Usuario.findAll().then((users) => {
                 res.render("userlist", {users: users})
 
             }).catch((erro) => {

@@ -4,6 +4,35 @@
             <th scope="col">#</th>
             <th scope="col">Usuario</th>
             <th scope="col">Tipo</th>
+            <th scope="col"></th>
         </tr>
     </thead>
+    <tbody>
+        <% for(let i=0; i<users.length; i++) {%>
+            <form action="/cad/sent" method="POST">
+                <tr>
+                    <th scope="row">
+                       <%= users[i].id%>
+                    </th>
+                    <td>
+                        <%= users[i].usuario %>
+                    </td>
+                    <td>
+                        <%if (users[i].eAdmin==1){%>
+                            Administador
+                        <% }else{ %>
+                            Usuario
+                        <% } %>
+                    </td>
+                    <td>
+                        <input type="hidden" name="id" value="<%=users[i].id%>">
+                        <button type="submit" name="sent" value="1" class="btn btn-danger col-sm-2" id="btnForm">Deletar</button>
+                    
+                        <button type="submit" name="sent" value="2" class="btn btn-primary col-sm-2" id="btnForm">Mudar tipo</button>
+                    
+                    </td>
+                </tr>
+            </form>
+            <% } %>
+    </tbody>
 </table>

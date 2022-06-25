@@ -24,7 +24,16 @@ require("./config/auth")(passport)
 
     // middlewares
         app.use((req, res, next) => {
-            res.locals.user = req.user || null;
+            if(req.user){
+                res.locals.user = {
+                    usuario: req.user[0].usuario,
+                    eAdmin: req.user[0].eAdmin
+                }
+
+            }else{
+                res.locals.user = null;
+            }
+
             next()
         })
         app.use(express.static("public"))
