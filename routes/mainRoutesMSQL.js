@@ -76,6 +76,16 @@ const {loged} = require('../helpers/loged')
             
         })
 
+        router.get('/userlist', loged, (req, res) => {
+            Registro.findAll().then((users) => {
+                res.render("userlist", {users: users})
+
+            }).catch((erro) => {
+                res.render("userlist")
+            })
+            
+        })
+
         // rotas de login
             router.get("/log", (req, res) => {
                 res.render("login", {warn: null})
@@ -130,7 +140,7 @@ const {loged} = require('../helpers/loged')
             })
 
             router.get("/logout", loged, (req, res) => {
-                req.logOut()
+                req.logOut(() => {})
                 res.redirect('/log')
             })
 
