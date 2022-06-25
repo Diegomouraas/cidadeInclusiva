@@ -23,8 +23,8 @@ const {loged} = require('../helpers/loged')
             }).catch((erro) => {
                 res.render("locais")
             })
-           
         })
+
     // Empresas acessiveis
         router.get('/empresas', (req, res) => {
             Registro.findAll().then((cards) => {
@@ -34,6 +34,7 @@ const {loged} = require('../helpers/loged')
                 res.render("empresas")
             })
         })
+
     // Servicos acessiveis
         router.get('/servicos', (req, res) => {
             Registro.findAll().then((cards) => {
@@ -43,6 +44,7 @@ const {loged} = require('../helpers/loged')
                 res.render("servicos")
             })
         })
+
     // Roteiros acessiveis
         router.get('/roteiros', (req, res) => {
             Registro.findAll().then((cards) => {
@@ -51,6 +53,11 @@ const {loged} = require('../helpers/loged')
             }).catch((erro) => {
                 res.render("roteiros")
             })
+        })
+
+    // suporte
+        router.get('/suporte', (req, res) => {
+            res.render('suporte')
         })
 
     // cadastro
