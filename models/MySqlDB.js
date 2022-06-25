@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize')
+const db = require('../config/db')
   
-const sequelize = new Sequelize('NomeDB', 'root', 'senha', {
-    host: 'localhost', 
-    dialect: 'mysql'
+const sequelize = new Sequelize(db.DBNome, db.DBUser, db.DBSenha, {
+    host: db.DBHost, 
+    dialect: db.DBDialect,
+    port: db.DBPort
 })
 
 sequelize.authenticate().then(() => {
