@@ -76,7 +76,7 @@ const {loged} = require('../helpers/loged')
             
         })
 
-        router.get('/userlist', loged, (req, res) => {
+        router.get('/userlist', eAdmin, (req, res) => {
             Registro.findAll().then((users) => {
                 res.render("userlist", {users: users})
 
@@ -111,6 +111,12 @@ const {loged} = require('../helpers/loged')
                             res.render("nuser", {warn: errores})
                         }else{
                             novoUsuario.senha = hash
+
+                            if(novoUsuario.eAdmin){
+                                novoUsuario.eAdmin = 1
+                            }else{
+                                novoUsuario.eAdmin = 0
+                            }
 
                             await Usuario.create({
                                 usuario: novoUsuario.usuario,
