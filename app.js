@@ -23,7 +23,6 @@ mongoose.connect("mongodb://localhost/angraInclusiva").then(() => {
     console.log("Erro ao conectar no servidor: " + erro)
 })
 
-
 // Rotas
 app.use('/', rotas)
 
