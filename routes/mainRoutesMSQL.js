@@ -66,12 +66,12 @@ const {loged} = require('../helpers/loged')
         })
         
     // Admin
-        router.get('/admaciadm', loged, (req, res) => {
+        router.get('/requisicoes', loged, (req, res) => {
             Registro.findAll().then((pendentes) => {
-                res.render("admin", {pendentes: pendentes})
+                res.render("requisicoes", {pendentes: pendentes})
 
             }).catch((erro) => {
-                res.render("admin")
+                res.render("requisicoes")
             })
             
         })
@@ -102,14 +102,46 @@ const {loged} = require('../helpers/loged')
                 Usuario.destroy({where: {id: req.body.id}});
             } else if(req.body.sent == 2){//mudar tipo do usuario
                 if(req.body.eAdmin == 0){
-                    Usuario.update({eAdmin:1}, {where: {id:req.body.id}})
+                    Usuario.update({eAdmin:1}, {where: {id:req.body.id}}).then().catch()
                 }else if(req.body.eAdmin == 1){
-                    Usuario.update({eAdmin:0}, {where: {id:req.body.id}})
+                    Usuario.update({eAdmin:0}, {where: {id:req.body.id}}).then().catch()
                 }
             }else{
                 res.redirect("/userlist")
             }
             res.redirect("/userlist")
+        })
+
+        router.post("/cad/act", loged, async (req, res) => {
+            if(req.body == undefined || 
+                req.body == null) res.redirect("/requisicoes")
+
+            if(req.body.id === undefined || 
+                req.body.selo === undefined || 
+                req.body.sent === undefined) res.redirect("/requisicoes")
+
+            if(req.body.id === null || 
+                req.body.selo === null || 
+                req.body.sent === null) res.redirect("/requisicoes")
+
+            //stat: 0 pendente, 1 aceito, 2 Negado
+            //sent: 1 aceitar, 2 negar
+            if(req.body.sent == 1){
+                Registro.update({stat:1, selo: req.body.selo}, {where: {id:req.body.id}}).then(() => {
+                    res.redirect("/requisicoes")
+                }).catch(() => {
+                    res.redirect("/requisicoes")
+                })
+            }else if(req.body.sent == 2){
+                Registro.update({stat:2}, {where: {id:req.body.id}}).then(() => {
+                    res.redirect("/requisicoes")
+                }).catch(() => {
+                    res.redirect("/requisicoes")
+                })
+            }else{
+                res.redirect("/requisicoes")
+            }
+            
         })
 
         // rotas de login
@@ -192,7 +224,7 @@ const {loged} = require('../helpers/loged')
             router.post("/logaci", (req, res, next) => {
                 
                 passport.authenticate("local", {
-                    successRedirect: "/admaciadm",
+                    successRedirect: "/requisicoes",
                     failureRedirect: "/log",
                     //failureFlash: true
                 })(req, res, next)
@@ -231,15 +263,6 @@ const {loged} = require('../helpers/loged')
         res.redirect('/cadastro')
         
     })
-
-    // Cadastro
-        router.post('/cad/sent', loged, async (req, res) => {
-            console.log(req.body)
-        })
-
-        router.post('/cad/decline', loged, async (req, res) => {
-            
-        })
 
 // Export
 module.exports = router;

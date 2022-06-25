@@ -11,12 +11,13 @@
             <th scope="col">data</th>
             <th scope="col">selo</th>
             <th scope="col"></th>
+            <th scope="col"></th>
             <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody>
         <% for(let i=0; i<pendentes.length; i++) {%>
-            <form action="/cad/sent" method="POST">
+            <form action="/cad/act" method="POST">
                 <tr>
                     <th scope="row">
                        <%=pendentes[i].id%>
@@ -39,13 +40,33 @@
                     <td>
                         <%= pendentes[i].createdAt.toLocaleDateString('el-GR') %>
                     </td>
+                    
+                        <%if (pendentes[i].selo==0){%>
+                            <td>
+                                <div class="alert alert-danger mr-1"> Pendente</div> 
+                            </td>
+                        <% }else if (pendentes[i].selo==1){ %>
+                            <td>
+                                <div class="alert alert-warning mr-1">Ouro</div> 
+                            </td>
+                        <% }else if (pendentes[i].selo==2){ %>
+                            <td>
+                                <div class="alert alert-secondary mr-1">Prata</div> 
+                            </td>
+                        <% }else if (pendentes[i].selo==3){ %>
+                            <td>
+                                <div class="alert alert-primary mr-1">Bronze</div> 
+                            </td>
+                        <% } %> %>
+                   
                     <td>
-                        <select class="form-control" name="seloSelect">
+                        <select class="form-control" name="selo">
                             <option value="0">Escolha Selo</option>
-                            <option value="ouro">Ouro</option>
-                            <option value="prata">Prata</option>
-                            <option value="bronze">Bronze</option>
+                            <option value="1">Ouro</option>
+                            <option value="2">Prata</option>
+                            <option value="3">Bronze</option>
                         </select>
+
                     </td>
                     <td>
                         <input type="hidden" name="id" value="<%=pendentes[i].id%>">
