@@ -547,7 +547,7 @@ h1 {
     max-height: 5rem;
     position: absolute;
     top: -30px;
-    right: -40px;
+    right: -5px;
     transform: rotate(20deg);
 }
 
