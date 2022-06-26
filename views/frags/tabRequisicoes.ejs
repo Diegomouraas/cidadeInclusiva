@@ -1,7 +1,7 @@
 
 <table class="table table-striped">
     <thead>
-        <tr>
+        <tr class="textosCenter">
             <th scope="col">#</th>
             <th scope="col">Requerente</th>
             <th scope="col">CNPJ</th>
@@ -10,52 +10,86 @@
             <th scope="col">N°</th>
             <th scope="col">data</th>
             <th scope="col">selo</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
             <th scope="col">Status</th>
         </tr>
     </thead>
     <tbody>
         <% for(let i=0; i<pendentes.length; i++) {%>
-            <form action="/cad/sent" method="POST">
+            <form action="/cad/act" method="POST">
                 <tr>
-                    <th scope="row">
+                    <th scope="row" class="textosCenter">
                        <%=pendentes[i].id%>
                     </th>
-                    <td>
+                    <td class="textosCenter">
                         <%= pendentes[i].nomeloc %>
                     </td>
-                    <td>
+                    <td class="textosCenter">
                         <%= pendentes[i].cnpj %>
                     </td>
-                    <td>
+                    <td class="textosCenter">
                         <%= pendentes[i].numcel %>
                     </td>
-                    <td>
+                    <td class="textosCenter">
                         <%= pendentes[i].cep %>
                     </td>
-                    <td>
+                    <td class="textosCenter">
                         <%= pendentes[i].num %>
                     </td>
-                    <td>
+                    <td class="textosCenter">
                         <%= pendentes[i].createdAt.toLocaleDateString('el-GR') %>
                     </td>
+                    
+                        <%if (pendentes[i].selo==0){%>
+                            <td>
+                                <div class="alert alert-danger mr-1 alertaSizeChange"> Pendente</div> 
+                            </td>
+                        <% }else if (pendentes[i].selo==1){ %>
+                            <td>
+                                <div class="alert alert-warning mr-1 alertaSizeChange">Ouro</div> 
+                            </td>
+                        <% }else if (pendentes[i].selo==2){ %>
+                            <td>
+                                <div class="alert alert-secondary mr-1 alertaSizeChange">Prata</div> 
+                            </td>
+                        <% }else if (pendentes[i].selo==3){ %>
+                            <td>
+                                <div class="alert alert-primary mr-1 alertaSizeChange">Bronze</div> 
+                            </td>
+                        <% } %> %>
+                   
                     <td>
-                        <select class="form-control" name="seloSelect">
+                        <select class="form-control" name="selo">
                             <option value="0">Escolha Selo</option>
-                            <option value="ouro">Ouro</option>
-                            <option value="prata">Prata</option>
-                            <option value="bronze">Bronze</option>
+                            <option value="1">Ouro</option>
+                            <option value="2">Prata</option>
+                            <option value="3">Bronze</option>
                         </select>
+
                     </td>
                     <td>
                         <input type="hidden" name="id" value="<%=pendentes[i].id%>">
-                        <button type="submit" name="sent" value="1" class="btn btn-primary col-sm-4" id="btnForm">Aceitar</button>
-                    
-                        <button type="submit" name="sent" value="2" class="btn btn-primary col-sm-4" id="btnForm">Negar</button>
-                    
+                        <button type="submit" name="sent" value="2" class="btn btn-danger col-sm-3 centerText" id="btnForm">Negar</button>
+                        <button type="submit" name="sent" value="1" class="btn btn-success col-sm-3 centerText" id="btnForm">Aceitar</button>
+                        
+                        <%if (user.eAdmin == 1){%>
+                            <button type="submit" name="sent" value="3" class="btn btn-danger col-sm-3 centerText" id="btnForm">Deletar</button>
+                        <% } %>
                     </td>
-                    <td>
-                        <%= pendentes[i].stat %>
-                    </td>
+                    <%if (pendentes[i].stat==0){%>
+                        <td>
+                            <div class="alert alert-warning mr-1 alertaSizeChange"> Pendente</div> 
+                        </td>
+                    <% }else if (pendentes[i].stat==1){ %>
+                        <td>
+                            <div class="alert alert-success mr-1 alertaSizeChange"> Aceito</div> 
+                        </td>
+                    <% }else if (pendentes[i].stat==2){ %>
+                        <td>
+                            <div class="alert alert-danger mr-1 alertaSizeChange"> Negado</div> 
+                        </td>
+                    <% } %> %>
                 </tr>
             </form>
             <% } %>

@@ -14,17 +14,46 @@
 <body>
     <section>
 
-        <%- include ('frags/header.ejs') %>
+        <%- include ('frags/headerAdmin.ejs') %>
 
-            <div class="main">
-                <% if(warn){ %>
-                    <div class="alert alert-"><%= warn%></div>
-                <%}%>
-
-                <%- include ('frags/nuser.ejs') %>
-
-                    <%- include ('frags/footer.ejs') %>
+            
+        <% if(warn){ %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong><%= warn%></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        <%}%>
+            
+
+                
+        <div class="login container form-group col-lg-6">
+            <div class="row">
+                <form action="/nuserreg" method="post" class="form-group col">
+                    <div>
+                        <h4>Novo Usuario</h4>
+                    </div>
+                    <br>
+
+                    <label for="usuario">Usuario: </label>
+                    <input type="text" name="usuario" placeholder="nome de usuario " class="form-control ">
+                    <br>
+                    <label for="senha">Senha: </label>
+                    <input type="password" name="senha" placeholder="senha " class="form-control ">
+                    <br>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" autocomplete="off" role="switch" id="eAdmin" name="eAdmin">
+                        <label class="form-check-label" for="eAdmin">Administador</label>
+                    </div>
+                    <br>
+
+                    <button type="submit " class="btn btn-primary col-sm-12 ">Confirmar</button>
+
+                </form>
+            </div>
+        </div>
+
+                <%- include ('frags/footer.ejs') %>
+
     </section>
     <script src="js/bootstrap.js"></script>
 </body>

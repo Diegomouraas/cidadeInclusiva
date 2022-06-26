@@ -23,10 +23,10 @@
                 <div class="container-fluid">
                     <div class="row" id="cardSpace">
                         <% for(let i=0; i<cards.length; i++) {%>
-                            <%if (cards[i].tipo==1){%>
+                            <%if (cards[i].tipo==1 && cards[i].stat==1){%>
                                 <div class="col-lg-2" id="cardLocais">
                                     <h5 class="card-title">
-                                        <%= cards[i].nome %>
+                                        <%= cards[i].nomeloc%>
                                     </h5>
                                     <p class="card-text">
                                         <%= cards[i].descricao %>
