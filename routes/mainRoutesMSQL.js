@@ -16,7 +16,8 @@ const {loged} = require('../helpers/loged')
     
     // Locais acessiveis
         router.get('/locais', (req, res) => {
-            Registro.findAll().then((cards) => {
+            Registro.findAll({attributes: ['id', 'stat', 'nomeloc', 'descricao', 
+                    'tipo', 'selo', 'cep', 'num', 'lat', 'longt']}).then((cards) => {
                 res.render("locais", {cards: cards})
                 //console.log(cards)
                 
@@ -27,7 +28,8 @@ const {loged} = require('../helpers/loged')
 
     // Empresas acessiveis
         router.get('/empresas', (req, res) => {
-            Registro.findAll().then((cards) => {
+            Registro.findAll({attributes: ['id', 'stat', 'nomeloc', 'descricao', 
+            'tipo', 'selo', 'cep', 'num', 'lat', 'longt']}).then((cards) => {
                 res.render("empresas", {cards: cards})
                 
             }).catch((erro) => {
@@ -37,7 +39,8 @@ const {loged} = require('../helpers/loged')
 
     // Servicos acessiveis
         router.get('/servicos', (req, res) => {
-            Registro.findAll().then((cards) => {
+            Registro.findAll({attributes: ['id', 'stat', 'nomeloc', 'descricao', 
+            'tipo', 'selo', 'cep', 'num', 'lat', 'longt']}).then((cards) => {
                 res.render("servicos", {cards: cards})
                 
             }).catch((erro) => {
@@ -47,7 +50,8 @@ const {loged} = require('../helpers/loged')
 
     // Roteiros acessiveis
         router.get('/roteiros', (req, res) => {
-            Registro.findAll().then((cards) => {
+            Registro.findAll({attributes: ['id', 'stat', 'nomeloc', 'descricao', 
+            'tipo', 'selo', 'cep', 'num', 'lat', 'longt']}).then((cards) => {
                 res.render("roteiros", {cards: cards})
                 
             }).catch((erro) => {
@@ -67,7 +71,8 @@ const {loged} = require('../helpers/loged')
         
     // Admin
         router.get('/requisicoes', loged, (req, res) => {
-            Registro.findAll().then((pendentes) => {
+            Registro.findAll({attributes: ['id', 'stat', 'nomeloc', 'cnpj','numcel',  
+            'tipo', 'selo', 'cep', 'num', 'createdAt']}).then((pendentes) => {
                 res.render("requisicoes", {pendentes: pendentes})
 
             }).catch((erro) => {
@@ -77,7 +82,7 @@ const {loged} = require('../helpers/loged')
         })
 
         router.get('/userlist', eAdmin, (req, res) => {
-            Usuario.findAll().then((users) => {
+            Usuario.findAll({attributes: ['id', 'usuario', 'eAdmin']}).then((users) => {
                 res.render("userlist", {users: users})
 
             }).catch((erro) => {
