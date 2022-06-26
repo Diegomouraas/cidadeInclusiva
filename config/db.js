@@ -1,7 +1,7 @@
 module.exports = {
-    DBNome: 'xxx',
-    DBUser: 'xxx',
-    DBSenha: 'xxx',
+    DBNome: 'angrainclusiva',
+    DBUser: 'root',
+    DBSenha: 'Xinelo!123',
     DBHost: 'localhost',
     DBDialect: 'mysql',
     DBPort: '3306'

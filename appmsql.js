@@ -25,9 +25,10 @@ require("./config/auth")(passport)
     // middlewares
         app.use((req, res, next) => {
             if(req.user){
+                console.log(req.user.eAdmin)
                 res.locals.user = {
-                    usuario: req.user[0].usuario,
-                    eAdmin: req.user[0].eAdmin
+                    usuario: req.user.usuario,
+                    eAdmin: req.user.eAdmin
                 }
 
             }else{
