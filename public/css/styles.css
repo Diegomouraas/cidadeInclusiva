@@ -545,9 +545,9 @@ h1 {
     min-height: 5rem;
     max-width: 5rem;
     max-height: 5rem;
-    position: relative;
-    top: -120px;
-    right: -130px;
+    position: absolute;
+    top: -30px;
+    right: -40px;
     transform: rotate(20deg);
 }
 
