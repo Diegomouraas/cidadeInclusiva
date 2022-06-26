@@ -152,7 +152,9 @@ ul {
     top: 0;
 }
 
-
+.fontChange{
+    font-size: 0.5rem;
+}
 /* Responsiveness */
 
 @media (min-width: 910px) {
@@ -174,8 +176,11 @@ ul {
     .hamb {
         display: none;
     }
-}
+    .fontChange{
+        font-size: 1rem;
+    }
 
+}
 
 /* Estilizando do NavBar */
 
