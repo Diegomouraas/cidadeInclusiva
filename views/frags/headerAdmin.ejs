@@ -8,21 +8,21 @@
       </button>
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-          <li class="">
+          <li class="espacoBotao">
             <a class="text-white headerTexts" aria-current="page" href="/requisicoes">Solicitações</a>
           </li>
           <%if (user.eAdmin == 1){%>
-          <li class="nav-item">
+          <li class="nav-item espacoBotao">
             <a class="text-white headerTexts" href="/userList">Usuarios</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item espacoBotao">
             <a class="text-white headerTexts" href="/nuser">NUser</a>
           </li>
           <% } %>
         </ul>
 
         <div class="d-flex">
-            <a class="nav-link " href="/logout">Logout</a>
+            <a class="nav-link text-white headerTexts" href="/logout">Logout</a>
         </div>
         
       </div>

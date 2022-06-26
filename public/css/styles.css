@@ -635,3 +635,26 @@ outra opção para os selos
 #cpfCheck{
     position: absolute;
 }
+
+
+/*    estilo tabela admin     */
+
+.centerText{
+    text-align: center!important;
+    padding-left: 3px!important;
+    margin: 0!important;
+}
+
+.alertaSizeChange{
+    padding: 7px!important;
+    text-align: center!important;
+    margin-bottom: 0 !important;
+}
+
+.textosCenter{
+    text-align: center!important;   
+}
+
+.espacoBotao{
+    margin-left: 50px!important;
+}
