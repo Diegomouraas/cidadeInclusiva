@@ -658,3 +658,7 @@ outra opção para os selos
 .espacoBotao{
     margin-left: 50px!important;
 }
+
+.btnMarginTop{
+    margin-top:0!important;
+}
