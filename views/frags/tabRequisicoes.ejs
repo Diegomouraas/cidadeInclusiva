@@ -70,10 +70,12 @@
                     </td>
                     <td>
                         <input type="hidden" name="id" value="<%=pendentes[i].id%>">
-                        <button type="submit" name="sent" value="1" class="btn btn-success col-sm-4" id="btnForm">Aceitar</button>
-                    
-                        <button type="submit" name="sent" value="2" class="btn btn-danger col-sm-4" id="btnForm">Negar</button>
-                    
+                        <button type="submit" name="sent" value="2" class="btn btn-danger col-sm-3" id="btnForm">Negar</button>
+                        <button type="submit" name="sent" value="1" class="btn btn-success col-sm-3" id="btnForm">Aceitar</button>
+                        
+                        <%if (user.eAdmin == 1){%>
+                            <button type="submit" name="sent" value="3" class="btn btn-danger col-sm-3" id="btnForm">Deletar</button>
+                        <% } %>
                     </td>
                     <%if (pendentes[i].stat==0){%>
                         <td>
