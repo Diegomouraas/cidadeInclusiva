@@ -4,16 +4,19 @@ const bcrypt = require("bcrypt")
 
 module.exports = function(passport) {
     
-    passport.use(new localStrategy({usernameField: 'usuario', passwordField: 'senha'}, (usuario, senha, done) => {
-        Usuario.findAll({usuario: usuario}).then((usuario) => {
+    passport.use(new localStrategy({usernameField: 'usuario', passwordField: 'senha'}, (user, senha, done) => {
+        Usuario.findOne({where: {usuario: user}}).then((usuario) => {
             
             if(!usuario){
                 console.log("usuario n exxiste")
                 return done(null,false, {message: "Esta conta não existe"})
             }
-
-            bcrypt.compare(senha, usuario[0].senha, (err, okk) => {
-                //console.log(usuario.senha)
+            console.log(senha)
+            console.log(usuario.senha)
+            bcrypt.compare(senha, usuario.senha, (err, okk) => {
+                
+                console.log(err)
+                console.log(okk)
                 if(okk){
                     return done(null, usuario)
                 }else{
@@ -25,13 +28,15 @@ module.exports = function(passport) {
     }))
 
     passport.serializeUser((usuario, done) => {
-        done(null, usuario[0].id)
+        done(null, usuario.id)
         console.log("ok")
     })
 
     passport.deserializeUser((id, done) => {
         console.log("notok")
-        Usuario.findAll({where: {id: id}}).then((usuario, err) => {
+        Usuario.findOne({where: {id: id}}).then((usuario, err) => {
+            console.log(err)
+            console.log(usuario)
             done(err, usuario)
         })
     })
