@@ -662,3 +662,8 @@ outra opção para os selos
 .btnMarginTop{
     margin-top:0!important;
 }
+
+/* TableInformacao */
+.TableInformacao{
+    margin: auto 200px;
+}
