@@ -663,7 +663,18 @@ outra opção para os selos
     margin-top:0!important;
 }
 
-/* TableInformacao */
+/* estilização da area administrativa */
+/*fragmento com mais informaçoes*/
 .TableInformacao{
     margin: auto 200px;
+}
+/*tabela principal*/
+.TabelaEstilo{
+    margin:40px;
+    padding:10px;  
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3)!important;
+    backdrop-filter: blur(5px)!important;
+    -webkit-backdrop-filter: blur(5px)!important;
+    border: 1px solid rgba(120, 130, 195, 0.3)!important;
 }
