@@ -4,12 +4,10 @@
         <tr class="textosCenter">
             <th scope="col">#</th>
             <th scope="col">Requerente</th>
-            <th scope="col">CNPJ</th>
-            <th scope="col">Celular</th>
-            <th scope="col">CEP</th>
-            <th scope="col">N°</th>
-            <th scope="col">data</th>
-            <th scope="col">selo</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Data</th>
+            <th scope="col">Selo</th>
+            <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col">Status</th>
@@ -17,6 +15,7 @@
     </thead>
     <tbody>
         <% for(let i=0; i<pendentes.length; i++) {%>
+
             <form action="/cad/act" method="POST">
                 <tr>
                     <th scope="row" class="textosCenter">
@@ -26,17 +25,17 @@
                         <%= pendentes[i].nomeloc %>
                     </td>
                     <td class="textosCenter">
-                        <%= pendentes[i].cnpj %>
+                        <%if (pendentes[i].tipo==1){%>
+                            <p>roteiro</p>
+                        <% }else if (pendentes[i].tipo==2){ %>
+                            <p>empresa</p>
+                        <% }else if (pendentes[i].tipo==3){ %>
+                            <p>locais</p>
+                        <% }else if (pendentes[i].tipo==4){ %>
+                            <p>outros</p>
+                        <% }%>
                     </td>
-                    <td class="textosCenter">
-                        <%= pendentes[i].numcel %>
-                    </td>
-                    <td class="textosCenter">
-                        <%= pendentes[i].cep %>
-                    </td>
-                    <td class="textosCenter">
-                        <%= pendentes[i].num %>
-                    </td>
+                    
                     <td class="textosCenter">
                         <%= pendentes[i].createdAt.toLocaleDateString('el-GR') %>
                     </td>
@@ -79,6 +78,11 @@
                             <button type="submit" name="sent" value="1" class="btn btn-success col-sm-5 centerText" id="btnForm">Aceitar</button>
                         <% } %>
                     </td>
+                    <!-- mais informaçoes da request-->
+                    <td>
+                        <button type="submit" name="sent" value="4" class="btn btn-danger col-sm-6 centerText" id="btnForm">mais</button>
+                    </td>
+
                     <%if (pendentes[i].stat==0){%>
                         <td>
                             <div class="alert alert-warning mr-1 alertaSizeChange"> Pendente</div> 
