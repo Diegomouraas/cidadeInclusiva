@@ -68,7 +68,7 @@ const {loged} = require('../helpers/loged')
         router.get('/cadastro', (req, res) => {
             res.render('cadastro', {warn: null})
         })
-        
+
     // Admin
         router.get('/requisicoes', loged, (req, res) => {
             Registro.findAll({attributes: ['id', 'stat', 'nomeloc', 'cnpj','numcel',  
@@ -130,7 +130,7 @@ const {loged} = require('../helpers/loged')
                 req.body.sent === null) return res.redirect("/requisicoes")
 
             //stat: 0 pendente, 1 aceito, 2 Negado
-            //sent: 1 aceitar, 2 negar, 3 deletar
+            //sent: 1 aceitar, 2 negar, 3 deletar, 4 mais
             if(req.body.sent == 1){
                 Registro.update({stat:1, selo: req.body.selo}, {where: {id:req.body.id}}).then(() => {
                     return res.redirect("/requisicoes")
@@ -149,7 +149,12 @@ const {loged} = require('../helpers/loged')
                 }).catch(() => {
                     return res.redirect("/requisicoes")
                 })
-            }else{
+            }else if(req.body.sent == 4){
+                await Registro.findOne({where: {id: req.body.id}}).then((info) =>{
+                    console.log(info);
+                    res.render('requisicaoMaisinfo', {info: info});
+                })
+            }else {
                 return res.redirect("/requisicoes")
             }
             

@@ -665,8 +665,20 @@ outra opção para os selos
 
 /* estilização da area administrativa */
 /*fragmento com mais informaçoes*/
+.moreInfoFather{
+    position: relative;
+    justify-content: center;
+    padding-top: 3%;
+}
 .TableInformacao{
-    margin: auto 200px;
+    margin: auto;
+    max-width: 80%;
+    height: auto;
+    overflow: clip;
+}
+.TextMaisInfo{
+    overflow: auto;
+    text-align: center;
 }
 /*tabela principal*/
 .TabelaEstilo{

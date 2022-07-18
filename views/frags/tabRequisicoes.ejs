@@ -26,13 +26,13 @@
                     </td>
                     <td class="textosCenter">
                         <%if (pendentes[i].tipo==1){%>
-                            <p>roteiro</p>
+                            <p>local</p>
                         <% }else if (pendentes[i].tipo==2){ %>
-                            <p>empresa</p>
+                            <p>serviço</p>
                         <% }else if (pendentes[i].tipo==3){ %>
-                            <p>locais</p>
+                            <p>roteiro</p>
                         <% }else if (pendentes[i].tipo==4){ %>
-                            <p>outros</p>
+                            <p>empresa</p>
                         <% }%>
                     </td>
                     
@@ -65,8 +65,11 @@
                             <option value="2">Prata</option>
                             <option value="3">Bronze</option>
                         </select>
-
                     </td>
+                    <!-- mais informaçoes da request-->
+                    <td>
+                        <button type="submit" name="sent" value="4" class="btn btn-secondary col-sm-6 centerText" id="btnForm">mais</button>
+                     </td>
                     <td>
                         <input type="hidden" name="id" value="<%=pendentes[i].id%>">
                         <%if (user.eAdmin == 1){%>
@@ -77,10 +80,6 @@
                             <button type="submit" name="sent" value="2" class="btn btn-danger col-sm-5 centerText" id="btnForm">Negar</button>
                             <button type="submit" name="sent" value="1" class="btn btn-success col-sm-5 centerText" id="btnForm">Aceitar</button>
                         <% } %>
-                    </td>
-                    <!-- mais informaçoes da request-->
-                    <td>
-                        <button type="submit" name="sent" value="4" class="btn btn-danger col-sm-6 centerText" id="btnForm">mais</button>
                     </td>
 
                     <%if (pendentes[i].stat==0){%>
@@ -98,7 +97,7 @@
                     <% } %> %>
                 </tr>
             </form>
-            <% } %>
+        <% } %>
     </tbody>
 </table>
 </div>
