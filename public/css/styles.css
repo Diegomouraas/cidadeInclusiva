@@ -545,9 +545,9 @@ h1 {
     min-height: 5rem;
     max-width: 5rem;
     max-height: 5rem;
-    position: relative;
-    top: -120px;
-    right: -130px;
+    position: absolute;
+    top: -30px;
+    right: -5px;
     transform: rotate(20deg);
 }
 
@@ -661,4 +661,32 @@ outra opção para os selos
 
 .btnMarginTop{
     margin-top:0!important;
+}
+
+/* estilização da area administrativa */
+/*fragmento com mais informaçoes*/
+.moreInfoFather{
+    position: relative;
+    justify-content: center;
+    padding-top: 3%;
+}
+.TableInformacao{
+    margin: auto;
+    max-width: 80%;
+    height: auto;
+    overflow: clip;
+}
+.TextMaisInfo{
+    overflow: auto;
+    text-align: center;
+}
+/*tabela principal*/
+.TabelaEstilo{
+    margin:40px;
+    padding:10px;  
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3)!important;
+    backdrop-filter: blur(5px)!important;
+    -webkit-backdrop-filter: blur(5px)!important;
+    border: 1px solid rgba(120, 130, 195, 0.3)!important;
 }

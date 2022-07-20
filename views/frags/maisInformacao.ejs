@@ -1,0 +1,69 @@
+<div class="moreInfoFather">
+    <div class="TableInformacao">
+        <table class="table table-bordered table-striped container-fluid">
+            <tbody>
+            <tr>
+                <th scope="row">Requerente:</th>
+                <td><%= info.nomeloc %></td>
+            </tr>
+            <tr>
+                <th scope="row">Representante:</th>
+                <td><%= info.nomeresp %></td>
+            </tr>
+            <tr>
+                <th scope="row">Email:</th>
+                <td><%= info.email %></td>
+            </tr>
+            <tr>
+                <th scope="row">Tipo:</th>
+                <td>
+                    <%if (info.tipo==1){%>
+                        <p>local</p>
+                    <% }else if (info.tipo==2){ %>
+                        <p>serviço</p>
+                    <% }else if (info.tipo==3){ %>
+                        <p>roteiro</p>
+                    <% }else if (info.tipo==4){ %>
+                        <p>empresa</p>
+                    <% }else if (info.tipo==0){ %>
+                        <p>não celecionado</p>
+                    <%}%>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">CPF/CNPJ:</th>
+                <td><%= info.cnpj %></td>
+            </tr>
+            <tr>
+                <th scope="row">Celular 1:</th>
+                <td><%= info.numcel %></td>
+            </tr>
+            <tr>
+                <th scope="row">Celular 2:</th>
+                <td><%= info.numfix %></td>
+            </tr>
+            <tr>
+                <th scope="row">CEP:</th>
+                <td><%= info.cep %></td>
+            </tr>
+            <tr>
+                <th scope="row">Bairro:</th>
+                <td><%= info.bairro %></td>
+            </tr>
+            <tr>
+                <th scope="row">Rua:</th>
+                <td><%= info.rua %></td>
+            </tr>
+            <tr>
+                <th scope="row">N°:</th>
+                <td><%= info.num %></td>
+            </tr>
+            <tr>
+                <th scope="row">Sobre:</th>
+                <td class="TextMaisInfo"><%= info.descricao %></td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</div>
