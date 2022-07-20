@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const db = require('../config/db')
+const db = require('../dbConfig/db')
   
 const sequelize = new Sequelize(db.DBNome, db.DBUser, db.DBSenha, {
     host: db.DBHost, 
