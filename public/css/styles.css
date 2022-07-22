@@ -164,12 +164,9 @@ ul {
     width: 90%;
     margin: auto;
     height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    align-items: center!important;
 }
 .footerSize{
-    margin-left: -40px;
     width: 200px;
     height:200px;
     overflow: flex;
