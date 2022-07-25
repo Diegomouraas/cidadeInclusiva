@@ -66,7 +66,7 @@ const {loged} = require('../helpers/loged')
 
     // cadastro
         router.get('/cadastro', (req, res) => {
-            res.render('cadastro', {warn: null})
+            res.render('cadastro', {erro: null})
         })
 
     // Admin
@@ -261,7 +261,7 @@ const {loged} = require('../helpers/loged')
 
         if(!req.body || req.body == undefined || req.body == null){
             erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(
@@ -278,7 +278,7 @@ const {loged} = require('../helpers/loged')
         req.body.nomeRepresentante == undefined)
         {
             erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
 
         }
 
@@ -296,13 +296,13 @@ const {loged} = require('../helpers/loged')
             req.body.nomeRepresentante == null)
             {
                 erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-                return res.redirect('/cadastro')   
+                res.render('cadastro',{erro: erro})
     
             }
 
         if(!(req.body.tipoLocal >=0 && req.body.tipoLocal <= 4)){
             erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-            return res.redirect('/cadastro')  
+            res.render('cadastro',{erro: erro})
             
         }
         
@@ -310,65 +310,65 @@ const {loged} = require('../helpers/loged')
             console.log("lalalal")
             erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
             
-            return res.redirect('/cadastro') 
+            res.render('cadastro',{erro: erro})
             
             
         }
         console.log("lalalal")
         if(req.body.endereco.length < 1){
             erro = "Endereço Invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else if(req.body.endereco.length > 255){
             erro = "endereço muito longo."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(req.body.numero.length < 0){
             erro = "Numero Invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else if(req.body.numero.length > 255){
             erro = "Numero muito longo."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(req.body.cep.length < 8){
             erro = "CEP Invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else if(req.body.cep.length > 9){
             erro = "CEP Invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(req.body.bairro.length < 1){
             erro = "Bairro Invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else if(req.body.bairro.length > 255){
             erro = "Nome do bairro muito longo."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(req.body.nomeRepresentante.length < 2){
             erro = "Nome do representante Invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else if(req.body.nomeRepresentante.length > 255){
             erro = "Nome do representante muito longo."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(req.body.nome_servico.length < 2){
             erro = "Nome Invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else if(req.body.nome_servico.length > 255){
             erro = "Nome muito longo."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(req.body.descricao.length < 3){
             erro = "Descrição Invalida."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else if(req.body.descricao.length > 500){
             erro = "Descrição muito longa."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         var cnpjok = 0
@@ -416,14 +416,14 @@ const {loged} = require('../helpers/loged')
             
         }else{
             erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         if(cnpjok == 1){
             await Registro.findOne({where: {cnpj: req.body.cnpj}}).then(async (card) => {
                 if(card){
                     erro = "CPF ou CNPJ já cadastrado."
-                    return res.redirect('/cadastro')
+                    res.render('cadastro',{erro: erro})
                 }else if(!card){
                     await Registro.create({
                         stat: 0,
@@ -444,25 +444,26 @@ const {loged} = require('../helpers/loged')
                         longt: 0
             
                     }).then(() =>{
-                        return res.redirect('/cadastro')
+                        erro = "Cadastro realizado com sucesso."
+                        res.render('cadastro',{erro: erro})
                     }).catch(() =>{
                         erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-                        return res.redirect('/cadastro')
+                        res.render('cadastro',{erro: erro})
                     })
                 }else{
                     erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-                    return res.redirect({warn:"Cadastro efetuado com sucesso!"}, '/cadastro')
+                    res.render('cadastro',{erro: erro})
                 }
             }).catch(() => {
                 erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-                return res.redirect('/cadastro')
+                res.render('cadastro',{erro: erro})
             })
         }else if(cnpjok == 0){
             erro = "CPF ou CNPJ invalido."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }else{
             erro = "Houve um erro ao tentar registrar sua solicitação. Tente novamente mais tarde."
-            return res.redirect('/cadastro')
+            res.render('cadastro',{erro: erro})
         }
 
         
