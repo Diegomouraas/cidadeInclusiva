@@ -356,6 +356,9 @@ body {
     background-size: 100%;
     background-position-x: right;
     background-repeat: no-repeat;
+    background-color: white;
+    color: black;
+    height: 100%;
 }
 
 
@@ -367,9 +370,9 @@ body {
     box-sizing: content-box;
 }
 
-html,
-body {
-    height: 100%;
+.dark-mode {
+    background-color: black;
+    color: white;
 }
 
 #checkbox-menu {
@@ -689,4 +692,13 @@ outra opção para os selos
     backdrop-filter: blur(5px)!important;
     -webkit-backdrop-filter: blur(5px)!important;
     border: 1px solid rgba(120, 130, 195, 0.3)!important;
+}
+
+/* botão modo contraste */
+
+.darkBtn{
+    margin: 6px;
+    position:absolute;
+    top:0;
+    right:0;  
 }
