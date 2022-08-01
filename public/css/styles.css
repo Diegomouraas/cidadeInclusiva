@@ -576,6 +576,7 @@ h1 {
     border: 1.5px solid rgba(0, 25, 255, 0.8);
     text-align: center;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,1);
+    transition: width 2s, height 2s, transform 2s;
 }
 
 #btnCards {
