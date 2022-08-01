@@ -25,10 +25,11 @@
                     <div class="row" id="cardSpace">
                         <% for(let i=0; i<cards.length; i++) {%>
                             <%if (cards[i].tipo==2 && cards[i].stat==1){%>
-                                <div class="col-lg-2" id="cardLocais">
+                                <div class="col-lg-2 cardLocais">
                                     <h5 class="card-title">
                                         <strong><%= cards[i].nomeloc%></strong>
                                     </h5>
+                                    <hr style="height:4px;color:rgb(44, 0, 148);background-color:rgb(44, 0, 148);">
                                     <p class="card-text">
                                         <%= cards[i].descricao %>
                                     </p>

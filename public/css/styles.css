@@ -556,14 +556,16 @@ h1 {
     align-items: stretch;
 }
 
-/*margin-top: auto;
+/*
+    margin-top: auto;
     margin-bottom: auto;
     margin-left: 5%;
-    margin-right: 5%;*/
+    margin-right: 5%;
+*/
 
-#cardLocais {
+.cardLocais {
     border-radius: 5px;
-    background: rgba(0, 186, 255, 0.9);
+    background: #e2e2e2;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     margin: 10px auto;
@@ -573,10 +575,18 @@ h1 {
     min-height: 10rem;
     max-width: 30rem;
     max-height: 35rem;
-    border: 1.5px solid rgba(0, 25, 255, 0.8);
+    border: 1.5px solid rgba(0, 25, 255);
     text-align: center;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,1);
-    transition: width 2s, height 2s, transform 2s;
+    box-shadow: -12px 12px 0px 0px  rgb(185, 188, 232);
+    transition: width 2s, height 2s;
+    transition: 0.5s ease-in-out;
+}
+
+.cardLocais:hover {
+    background: #00BAFF;
+    box-shadow: -17px 17px 0px 0px  rgb(130, 137, 234);
+    transform: translate(5px, -5px);
+    transition: 0.5s ease-in-out;
 }
 
 #btnCards {
@@ -610,6 +620,8 @@ h1 {
     top: -30px;
     right: -5px;
     transform: rotate(20deg);
+    border: 1px solid rgba(0, 25, 255, 0.8);;
+    border-radius: 50%;
 }
 
 
