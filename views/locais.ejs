@@ -36,25 +36,25 @@
                                     <!-- seletor de selos -->
                                     <%if (cards[i].selo==1){%>
                                         <img class="seloCards" src="/img/Ouro.png" alt="...">
-                                        <% } 
-                        else if (cards[i].selo==2){%>
+                                    <% } 
+                                    else if (cards[i].selo==2){%>
                                             <img class="seloCards" src="/img/Prata.png" alt="...">
-                                            <% }
-                            else if (cards[i].selo==3){%>
+                                    <% }
+                                    else if (cards[i].selo==3){%>
                                                 <img class="seloCards" src="/img/Bronze.png" alt="...">
-                                                <% } %>
-                                </div>
-                                <% } %>
                                     <% } %>
+                                </div>
+                            <% } %>
+                        <% } %>
                     </div>
                 </div>
                 <br>
-                <%- include ('frags/footer.ejs') %>
             </div>
     </section>
+    <%- include ('frags/footer.ejs') %>
     <script src="js/bootstrap.js"></script>
     <%- include ('frags/darkMode.ejs') %>
     <%- include ('frags/vLibras.ejs') %>
 </body>
 
-</html>
+</html> 
