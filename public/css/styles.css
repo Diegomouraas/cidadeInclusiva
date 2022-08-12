@@ -571,25 +571,26 @@ h1 {
     margin: 10px auto;
     margin-bottom: 20px;
     padding-top: 20px;
+    padding-bottom: 20px;
     min-width: 18rem;
     min-height: 10rem;
     max-width: 30rem;
     max-height: 35rem;
     border: 1.5px solid rgba(0, 25, 255);
     text-align: center;
-    box-shadow: -12px 12px 0px 0px  rgb(185, 188, 232);
     transition: width 2s, height 2s;
     transition: 0.5s ease-in-out;
 }
 
 .cardLocais:hover {
-    background: #00BAFF;
-    box-shadow: -17px 17px 0px 0px  rgb(130, 137, 234);
-    transform: translate(5px, -5px);
+    box-shadow: 0px 0px 4px 5px  rgb(130, 137, 234);
     transition: 0.5s ease-in-out;
 }
 
 #btnCards {
+    position: absolute;
+    bottom: 5px;
+    right: 25%;
     margin-bottom: 5px;
     background: #FF8700;
     border: 0;
