@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Angra Cidade Inclusiva</title>
     <link rel="shortcut icon" href="img/faviicon.ico" type="image/x-icon" />
 </head>
@@ -25,10 +29,11 @@
                     <div class="row" id="cardSpace">
                         <% for(let i=0; i<cards.length; i++) {%>
                             <%if (cards[i].tipo==2 && cards[i].stat==1){%>
-                                <div class="col-lg-2" id="cardLocais">
+                                <div class="col-lg-2 cardLocais animate__animated animate__fadeInUpBig">
                                     <h5 class="card-title">
-                                        <%= cards[i].nomeloc%>
+                                        <strong><%= cards[i].nomeloc%></strong>
                                     </h5>
+                                    <hr style="height:4px;color:rgb(44, 0, 148);background-color:rgb(44, 0, 148);">
                                     <p class="card-text">
                                         <%= cards[i].descricao %>
                                     </p>
