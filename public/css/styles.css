@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size:100%;
+}
 
 /* Variaveis de Cores */
 
@@ -406,6 +409,7 @@ body {
     background-color: white;
     color: black;
     height: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -564,27 +568,30 @@ h1 {
 */
 
 .cardLocais {
-    border-radius: 5px;
+    border-radius: 10px;
     background: #e2e2e2;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    margin: 10px auto;
-    margin-bottom: 20px;
+    margin: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     min-width: 18rem;
     min-height: 10rem;
     max-width: 30rem;
     max-height: 35rem;
-    border: 1.5px solid rgba(0, 25, 255);
-    text-align: center;
+    border: 1.5px solid rgb(0, 0, 0);
+    text-align: justify;
     transition: width 2s, height 2s;
     transition: 0.5s ease-in-out;
+    font-size: 1em;
+}
+.cardLocais p{
+    margin-bottom: 50px;
 }
 
 .cardLocais:hover {
-    box-shadow: 0px 0px 4px 5px  rgb(130, 137, 234);
-    transition: 0.5s ease-in-out;
+    box-shadow: 0px 0px 4px 5px  rgb(172, 173, 185);
+    transition: 0.2s ease-in-out;
 }
 
 #btnCards {
@@ -597,7 +604,7 @@ h1 {
     color: white;
     padding: 10px;
     width: 50%;
-    border-radius:30px;
+    border-radius:10px;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,1);
 }
 
