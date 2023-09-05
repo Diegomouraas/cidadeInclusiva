@@ -22,4 +22,4 @@ Projeto Angra Cidade Inclusiva
 
     1 - No arquivo MySqlDB.js localizado na pasta models, modifique os campos de usuario e senha que originalmente estarão preenxidos com 'root' e '###' respectivamente, inserindo a o usuario e senha do servidor MySQL que a aplicação utilizará.
 
-4 - Para rodar a aplicação, deverá utilizar o node para executar o arquivo appmsql.js localizado na raiz do pojeto.
+4 - Para rodar a aplicação, deverá utilizar o node para executar o arquivo appmsql.js localizado na raiz do pojeto. Com qual comando ?
